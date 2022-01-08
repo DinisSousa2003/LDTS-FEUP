@@ -1,8 +1,10 @@
-package states;
+package Tetris.states;
 
-import controller.Controller;
-import model.Menu;
-import viewer.Viewer;
+import Tetris.controller.Controller;
+import Tetris.controller.MenuController;
+import Tetris.model.Menu;
+import Tetris.viewer.MenuViewer;
+import Tetris.viewer.Viewer;
 
 
 public class MenuState extends State<Menu> {

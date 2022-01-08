@@ -1,8 +1,11 @@
-package states;
+package Tetris.states;
 
-import controller.Controller;
-import viewer.Viewer;
+import Tetris.Main;
+import Tetris.controller.Controller;
+import Tetris.gui.GUI;
+import Tetris.viewer.Viewer;
 
+import java.io.IOException;
 
 
 public abstract class State <T> {
@@ -24,9 +27,9 @@ public abstract class State <T> {
         return model;
     }
 
-    public void step(Game game, GUI gui, long time) throws IOException {
-        GUI.PressedKey action = gui.getKeyInput();
-        controller.step(game, action, time);
+    public void step(Main main, GUI gui, long time) throws IOException {
+        GUI.ACTION action = gui.getNextAction();
+        controller.step(main, action, time);
         viewer.draw(gui);
     }
 }

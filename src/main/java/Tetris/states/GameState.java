@@ -1,8 +1,10 @@
-package states;
+package Tetris.states;
 
-import controller.Controller;
-import model.Game;
-import viewer.Viewer;
+import Tetris.controller.Controller;
+import Tetris.controller.GameController;
+import Tetris.model.Game;
+import Tetris.viewer.GameViewer;
+import Tetris.viewer.Viewer;
 
 public class GameState extends State<Game> {
     public GameState(Game game) {

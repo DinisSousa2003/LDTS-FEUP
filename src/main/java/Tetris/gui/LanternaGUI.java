@@ -1,4 +1,4 @@
-package gui;
+package Tetris.gui;
 
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.input.KeyStroke;
@@ -39,7 +39,7 @@ public class LanternaGUI implements GUI{
         return terminal;
     }
 
-    //TODO
+    //TODO: ADD ACTIONS THAT WILL BE USED DURING GAMEPLAY (IF NEEDED)
     @Override
     public ACTION getNextAction() throws IOException {
         KeyStroke keyStroke = screen.pollInput();

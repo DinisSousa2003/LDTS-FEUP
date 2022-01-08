@@ -1,8 +1,9 @@
-import gui.LanternaGUI;
-import model.Game;
-import model.Menu;
-import states.MenuState;
-import states.State;
+package Tetris;
+
+import Tetris.gui.LanternaGUI;
+import Tetris.model.Menu;
+import Tetris.states.MenuState;
+import Tetris.states.State;
 
 import java.io.IOException;
 
@@ -32,8 +33,9 @@ public class Main {
         this.state = state;
     }
 
+    //TODO: DEFINE FRAME RATE
     private void start() throws IOException {
-        int FPS = 1; //we can change the frame time anytime
+        int FPS = 1;
         int frameTime = 1000 / FPS;
 
         while (this.state != null) {

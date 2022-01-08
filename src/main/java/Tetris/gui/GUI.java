@@ -1,4 +1,4 @@
-package gui;
+package Tetris.gui;
 
 import java.io.IOException;
 

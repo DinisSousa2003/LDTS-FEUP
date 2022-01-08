@@ -1,6 +1,7 @@
-package controller;
+package Tetris.controller;
 
-import gui.GUI;
+import Tetris.Main;
+import Tetris.gui.GUI;
 
 public abstract class Controller<T> {
     private final T model;
