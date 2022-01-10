@@ -10,14 +10,22 @@ public class MenuTest {
 
     @BeforeEach
     void setUp(){
-        menu = Menu();
+        menu = new Menu();
     }
 
     @Test
     void nextAndPreviousEntry(){
         menu.nextEntry(); //0 -> 1
-        Assertions.assertTrue(menu.getEntry(), 1);
+        Assertions.assertEquals(1, menu.getCurrentEntry());
         menu.previousEntry(); //1 -> 0
-        Assertions.assertFalse(menu.getEntry(), 0);
+        Assertions.assertEquals(0, menu.getCurrentEntry());
+
+        for(int i = 0; i < menu.getNumEntries(); i++){
+            menu.nextEntry();
+        }
+        Assertions.assertEquals(0, menu.getCurrentEntry());
+
+        menu.previousEntry();
+        Assertions.assertEquals(menu.getNumEntries() - 1, menu.getCurrentEntry());
     }
 }
