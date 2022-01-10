@@ -5,6 +5,7 @@ import Tetris.model.menu.Menu;
 import Tetris.states.MenuState;
 import Tetris.states.State;
 
+import java.awt.GraphicsEnvironment;
 import java.io.IOException;
 
 public class Main {
@@ -14,7 +15,7 @@ public class Main {
 
 
     private Main() throws IOException {
-        gui = new LanternaGUI(100, 100);
+        gui = new LanternaGUI(25, 18);
         state = new MenuState(new Menu());
     }
 
