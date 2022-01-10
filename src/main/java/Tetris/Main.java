@@ -1,7 +1,7 @@
 package Tetris;
 
 import Tetris.gui.LanternaGUI;
-import Tetris.model.Menu;
+import Tetris.model.menu.Menu;
 import Tetris.states.MenuState;
 import Tetris.states.State;
 

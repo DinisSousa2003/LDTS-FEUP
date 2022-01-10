@@ -2,7 +2,7 @@ package Tetris.controller;
 
 import Tetris.Main;
 import Tetris.gui.GUI;
-import Tetris.model.Menu;
+import Tetris.model.menu.Menu;
 
 public class MenuController extends Controller<Menu> {
     public MenuController(Menu menu) {

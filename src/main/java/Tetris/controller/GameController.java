@@ -2,7 +2,7 @@ package Tetris.controller;
 
 import Tetris.Main;
 import Tetris.gui.GUI;
-import Tetris.model.Game;
+import Tetris.model.game.Game;
 
 public class GameController extends Controller<Game>{
     public GameController(Game game){

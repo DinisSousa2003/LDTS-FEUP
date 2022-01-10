@@ -1,7 +1,7 @@
 package Tetris.viewer;
 
 import Tetris.gui.GUI;
-import Tetris.model.Game;
+import Tetris.model.game.Game;
 
 import java.io.IOException;
 

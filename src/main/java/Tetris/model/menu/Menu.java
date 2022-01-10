@@ -1,4 +1,4 @@
-package Tetris.model;
+package Tetris.model.menu;
 
 import java.util.Arrays;
 import java.util.List;

@@ -2,7 +2,7 @@ package Tetris.controller;
 
 import Tetris.Main;
 import Tetris.gui.GUI;
-import Tetris.model.Rules;
+import Tetris.model.rules.Rules;
 
 public class RulesController extends Controller<Rules>{
     public RulesController(Rules rules){
