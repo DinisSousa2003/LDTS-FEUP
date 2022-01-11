@@ -26,13 +26,13 @@ public class Color{
     }
 
     private void loadRAINBOW(){
-        RAINBOW.add("#00FFFF");
-        RAINBOW.add("#FFFF00");
-        RAINBOW.add("#800080");
-        RAINBOW.add("#00FF00");
         RAINBOW.add("#FF0000");
-        RAINBOW.add("#0000FF");
         RAINBOW.add("#FF7F00");
+        RAINBOW.add("#FFFF00");
+        RAINBOW.add("#00FF00");
+        RAINBOW.add("#00FFFF");
+        RAINBOW.add("#0000FF");
+        RAINBOW.add("#800080");
     }
 
     public Map<String, String> getCOLORS() {
