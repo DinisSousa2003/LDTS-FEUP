@@ -16,6 +16,10 @@ public class Menu {
         return currentEntry;
     }
 
+    public boolean isSelected(int i){
+        return i == getCurrentEntry();
+    }
+
     public int getNumEntries() {
         return entries.size();
     }
