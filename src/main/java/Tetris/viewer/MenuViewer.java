@@ -14,17 +14,33 @@ public class MenuViewer extends Viewer<Menu>{
     @Override
     protected void drawElements(GUI gui) throws IOException {
 
-        gui.drawText(new Position(10, 3), "T", "#FF0000");
-        gui.drawText(new Position(11, 3), "E", "#FF7F00");
-        gui.drawText(new Position(12, 3), "T", "#FFFF00");
-        gui.drawText(new Position(13, 3), "R", "#00FF00");
-        gui.drawText(new Position(14, 3), "I", "#00FFFF");
-        gui.drawText(new Position(15, 3), "S", "#800080");
+        for(int i = 0; i < 22; i++) {
+            gui.drawSquare(new Position(i, 0), color.getRAINBOW().get(i % 7));
+        }
+
+        for(int i = 0; i < 22; i++) {
+            gui.drawSquare(new Position(i, 21), color.getRAINBOW().get(i % 7));
+        }
+
+        for(int i = 1; i < 21; i++) {
+            gui.drawSquare(new Position(0, i), color.getRAINBOW().get(i % 7));
+        }
+
+        for(int i = 1; i < 21; i++) {
+            gui.drawSquare(new Position(21, i), color.getRAINBOW().get(i % 7));
+        }
+
+        gui.drawText(new Position(8, 4), "T", color.getColor("RED"));
+        gui.drawText(new Position(9, 4), "E", color.getColor("ORANGE"));
+        gui.drawText(new Position(10, 4), "T", color.getColor("YELLOW"));
+        gui.drawText(new Position(11, 4), "R", color.getColor("GREEN"));
+        gui.drawText(new Position(12, 4), "I", color.getColor("CYAN"));
+        gui.drawText(new Position(13, 4), "S", color.getColor("PURPLE"));
 
         for (int i = 0; i < getModel().getNumEntries(); i++)
             gui.drawText(
-                    new Position(5, 9 + i),
+                    new Position(4, 11 + 2*i),
                     getModel().getEntryName(i),
-                    getModel().isSelected(i) ? "#FFD700" : "#FFFFFF");
+                    getModel().isSelected(i) ? color.getColor("RED") : color.getColor("WHITE"));
     }
 }

@@ -13,7 +13,10 @@ import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 
 import java.awt.*;
+import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 
 import static java.awt.Font.MONOSPACED;
 import static java.awt.Font.PLAIN;
@@ -25,8 +28,8 @@ public class LanternaGUI implements GUI{
         this.screen = screen;
     }
 
-    public LanternaGUI(int width, int height) throws IOException {
-        AWTTerminalFontConfiguration fontConfig = setFont();
+    public LanternaGUI(int width, int height) throws IOException, URISyntaxException, FontFormatException {
+        AWTTerminalFontConfiguration fontConfig = loadSquareFont();
         Terminal terminal = createTerminal(width, height, fontConfig);
         this.screen = createScreen(terminal);
     }
@@ -50,9 +53,17 @@ public class LanternaGUI implements GUI{
         return terminal;
     }
 
-    private AWTTerminalFontConfiguration setFont(){
-        Font ft = new Font(MONOSPACED, PLAIN, 30);
-        return AWTTerminalFontConfiguration.newInstance(ft);
+    private AWTTerminalFontConfiguration loadSquareFont() throws FontFormatException, IOException, URISyntaxException {
+        URL resource = getClass().getClassLoader().getResource("fonts/square.ttf");
+        File fontFile = new File(resource.toURI());
+        Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
+
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        ge.registerFont(font);
+
+        Font loadedFont = font.deriveFont(Font.PLAIN, 25);
+        AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);
+        return fontConfig;
     }
 
     @Override
@@ -60,6 +71,13 @@ public class LanternaGUI implements GUI{
         TextGraphics tg = screen.newTextGraphics();
         tg.setForegroundColor(TextColor.Factory.fromString(color));
         tg.putString(position.getX(), position.getY(), text);
+    }
+
+    @Override
+    public void drawSquare(Position position, String color){
+        TextGraphics tg = screen.newTextGraphics();
+        tg.setBackgroundColor(TextColor.Factory.fromString(color));
+        tg.putString(position.getX(), position.getY(), " ");
     }
 
     //TODO: ADD ACTIONS THAT WILL BE USED DURING GAMEPLAY (IF NEEDED)

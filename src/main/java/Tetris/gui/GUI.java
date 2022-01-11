@@ -17,6 +17,8 @@ public interface GUI {
      */
     void drawText(Position position, String text, String color);
 
+    void drawSquare(Position position, String color);
+
     void clear();
 
     void refresh() throws IOException;
