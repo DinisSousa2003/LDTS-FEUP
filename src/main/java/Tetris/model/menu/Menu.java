@@ -20,6 +20,18 @@ public class Menu {
         return i == getCurrentEntry();
     }
 
+    public boolean isSelectedPlay(){
+        return isSelected(0);
+    }
+
+    public boolean isSelectedRules(){
+        return isSelected(1);
+    }
+
+    public boolean isSelectedExit(){
+        return isSelected(2);
+    }
+
     public int getNumEntries() {
         return entries.size();
     }
