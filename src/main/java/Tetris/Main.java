@@ -35,9 +35,10 @@ public class Main {
         this.state = state;
     }
 
-    //TODO: DEFINE FRAME RATE
+    public State getState() {return state;}
+
     private void start() throws IOException {
-        int FPS = 1;
+        int FPS = 40;
         int frameTime = 1000 / FPS;
 
         while (this.state != null) {
