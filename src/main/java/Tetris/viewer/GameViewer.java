@@ -1,13 +1,13 @@
 package Tetris.viewer;
 
 import Tetris.gui.GUI;
-import Tetris.model.game.Game;
+import Tetris.model.game.Screen;
 
 import java.io.IOException;
 
-public class GameViewer extends Viewer<Game> {
-    public GameViewer(Game game){
-        super(game);
+public class GameViewer extends Viewer<Screen> {
+    public GameViewer(Screen screen){
+        super(screen);
     }
 
     @Override

@@ -1,4 +1,4 @@
 package Tetris.model.game;
 
-public class Game {
+public class Stats {
 }
