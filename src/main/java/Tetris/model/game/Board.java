@@ -26,12 +26,18 @@ public class Board {
          */
     }
 
-    public boolean isEmpty(Position pos){return true;}
+    //public boolean isEmpty(Position pos){return true;}
+
+    public boolean canOccupy(Position pos) {return true;}
 
     public boolean isLineFull(int line){return false;}
 
+    public void removeLine(int line){;}
+
     public void addBlock(Position pos){;}
 
-    public void removeBlock(Position pos){;}
+
+
+    //public void removeBlock(Position pos){;}
 
 }
