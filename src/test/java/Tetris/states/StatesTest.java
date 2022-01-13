@@ -53,7 +53,6 @@ public class StatesTest {
     }
 
     @Test
-    //Should work when the rules are implemented, if not try again
     void actionSelect(){
         menuController.step(main, GUI.ACTION.DOWN, 0);
         menuController.step(main, GUI.ACTION.SELECT, 0);
