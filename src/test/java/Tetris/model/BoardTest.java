@@ -1,5 +1,6 @@
 package Tetris.model;
 
+import Tetris.model.game.Block;
 import Tetris.model.game.Board;
 import Tetris.model.menu.Menu;
 import org.junit.jupiter.api.AfterEach;
@@ -23,25 +24,27 @@ public class BoardTest {
 
     @Test
     void  canOccupy_isFull_addBlock_removeLine(){
-        if(board.canOccupy(new Position(0,0))) board.addBlock(new Position(0,0));
-        if(board.isLineFull(0)) board.removeLine(0);
-        if(board.canOccupy(new Position(1,0))) board.addBlock(new Position(1,0));
-        if(board.canOccupy(new Position(1,0))) board.addBlock(new Position(1,0));
-        if(board.canOccupy(new Position(0,1))) board.addBlock(new Position(0,1));
-        if(board.canOccupy(new Position(1,1))) board.addBlock(new Position(1,1));
-        if(board.canOccupy(new Position(2,0))) board.addBlock(new Position(2,0));
-        if(board.canOccupy(new Position(3,0))) board.addBlock(new Position(3,0));
-        if(board.canOccupy(new Position(4,0))) board.addBlock(new Position(4,0));
-        if(board.isLineFull(0)) board.removeLine(0);
-        if(board.canOccupy(new Position(0,0))) board.addBlock(new Position(0,0));
+        Block b = new Block();
 
-        Assertions.assertTrue(board.canOccupy(new Position(1,0)));
-        Assertions.assertTrue(board.canOccupy(new Position(2,0)));
-        Assertions.assertTrue(board.canOccupy(new Position(3,0)));
-        Assertions.assertTrue(board.canOccupy(new Position(4,0)));
-        Assertions.assertFalse(board.canOccupy(new Position(0,0)));
-        Assertions.assertFalse(board.canOccupy(new Position(0,1)));
-        Assertions.assertFalse(board.canOccupy(new Position(1,1)));
+        if(board.canOccupy(new Position(0,4))) board.addBlock(new Position(0,4),b);
+        if(board.isLineFull(4)) board.removeLine(4);
+        if(board.canOccupy(new Position(1,4))) board.addBlock(new Position(1,4),b);
+        if(board.canOccupy(new Position(1,4))) board.addBlock(new Position(1,4),b);
+        if(board.canOccupy(new Position(0,3))) board.addBlock(new Position(0,3),b);
+        if(board.canOccupy(new Position(1,3))) board.addBlock(new Position(1,3),b);
+        if(board.canOccupy(new Position(2,4))) board.addBlock(new Position(2,4),b);
+        if(board.canOccupy(new Position(3,4))) board.addBlock(new Position(3,4),b);
+        if(board.canOccupy(new Position(4,4))) board.addBlock(new Position(4,4),b);
+        if(board.isLineFull(4)) board.removeLine(4);
+        if(board.canOccupy(new Position(4,4))) board.addBlock(new Position(4,4),b);
+
+        Assertions.assertTrue(board.canOccupy(new Position(1,3)));
+        Assertions.assertTrue(board.canOccupy(new Position(0,3)));
+        Assertions.assertTrue(board.canOccupy(new Position(2,4)));
+        Assertions.assertTrue(board.canOccupy(new Position(3,4)));
+        Assertions.assertFalse(board.canOccupy(new Position(0,4)));
+        Assertions.assertFalse(board.canOccupy(new Position(1,4)));
+        Assertions.assertFalse(board.canOccupy(new Position(4,4)));
 
         Assertions.assertFalse(board.canOccupy(new Position(-1,0)));
         Assertions.assertFalse(board.canOccupy(new Position(0,-1)));
