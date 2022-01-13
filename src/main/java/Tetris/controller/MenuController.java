@@ -2,7 +2,7 @@ package Tetris.controller;
 
 import Tetris.Main;
 import Tetris.gui.GUI;
-import Tetris.model.game.Game;
+import Tetris.model.game.Screen;
 import Tetris.model.menu.Menu;
 import Tetris.model.rules.Rules;
 import Tetris.states.GameState;
@@ -24,7 +24,7 @@ public class MenuController extends Controller<Menu> {
                 break;
             case SELECT:
                 if (getModel().isSelectedExit()) main.setState(null);
-                if (getModel().isSelectedPlay()) main.setState(new GameState(new Game()));
+                if (getModel().isSelectedPlay()) main.setState(new GameState(new Screen(10,20)));
                 if (getModel().isSelectedRules()) main.setState(new RulesState(new Rules()));
                 break;
             case QUIT:
