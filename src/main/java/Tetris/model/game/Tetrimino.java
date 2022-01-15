@@ -25,6 +25,8 @@ public abstract class Tetrimino {
         this.direction = direction;
     }
 
+    public TetriminoDirection getDirection(){return this.direction;}
+
     public Position[]  rotateRight(){
         TetriminoDirection tempdirection = TetriminoDirection.UP;
         Position[] positions = new Position[4];
