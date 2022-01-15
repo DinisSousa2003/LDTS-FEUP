@@ -38,6 +38,8 @@ public class QueueTest {
         Tetrimino t4 = queue.popNext();
         Assertions.assertEquals(3,3);
         Assertions.assertNotNull(t4);
+
+        //falta verificar se o novo tn nao é apenas um tetrimino
     }
 
 }
