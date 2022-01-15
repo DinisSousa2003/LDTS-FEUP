@@ -20,7 +20,7 @@ public abstract class Tetrimino {
     public abstract Position[] getPositions(TetriminoDirection direction);
 
     public Position getCentralPosition(){return centralPosition;}
-    
+
     public void setDirection(TetriminoDirection direction){
         this.direction = direction;
     }
