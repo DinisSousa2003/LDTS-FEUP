@@ -1,7 +1,8 @@
 package Tetris.states;
 
 import Tetris.controller.Controller;
-import Tetris.controller.GameController;
+import Tetris.controller.game.GameController;
+import Tetris.controller.game.ScreenController;
 import Tetris.model.game.Screen;
 import Tetris.viewer.GameViewer;
 import Tetris.viewer.Viewer;
@@ -16,6 +17,6 @@ public class GameState extends State<Screen> {
 
     @Override
     protected Controller<Screen> getController() {
-        return new GameController(getModel());
+        return new ScreenController(getModel());
     }
 }
