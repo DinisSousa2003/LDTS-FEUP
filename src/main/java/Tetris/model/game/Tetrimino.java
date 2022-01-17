@@ -29,12 +29,10 @@ public abstract class Tetrimino {
         this.direction = direction;
     }
 
-
     public TetriminoDirection getDirection(){return this.direction;}
 
-    public Position[]  rotateRight(){
+    public Position[]  rotateRightPositions(){
         TetriminoDirection tempdirection = TetriminoDirection.UP;
-        Position[] positions;
         switch(this.direction){
             case UP:
                 tempdirection = TetriminoDirection.RIGHT;
@@ -48,16 +46,11 @@ public abstract class Tetrimino {
             case LEFT:
                 tempdirection = TetriminoDirection.UP;
                 break;
-
         }
-
-        positions = getPositions(tempdirection);
-
-        return positions;
+        return getActualPositions(this.centralPosition,tempdirection);
     }
-    public Position[] rotateLeft(){
+    public Position[] rotateLeftPositions(){
         TetriminoDirection tempdirection = TetriminoDirection.UP;
-        Position[] positions;
         switch(this.direction) {
             case UP:
                 tempdirection = TetriminoDirection.LEFT;
@@ -72,9 +65,7 @@ public abstract class Tetrimino {
                 tempdirection = TetriminoDirection.UP;
                 break;
         }
-        positions = getPositions(tempdirection);
-
-        return positions;
+        return getActualPositions(this.centralPosition,tempdirection);
     }
     public void moveRight(){
         this.centralPosition = new Position(centralPosition.getX()+1, centralPosition.getY() );
@@ -84,6 +75,23 @@ public abstract class Tetrimino {
     }
     public void moveDown(){
         this.centralPosition = new Position(centralPosition.getX(), centralPosition.getY()-1);
+    }
+    public Position[] moveRightPositions(){
+        return getActualPositions( new Position(centralPosition.getX()+1, centralPosition.getY() ),this.direction);
+    }
+    public Position[] moveLeftPositions(){
+        return getActualPositions( new Position(centralPosition.getX()-1, centralPosition.getY() ),this.direction);
+    }
+    public Position[] moveDownPositions(){
+        return getActualPositions(new Position(centralPosition.getX(), centralPosition.getY()+1),this.direction);
+    }
+
+    public Position[] getActualPositions(Position centralPosition,TetriminoDirection direction){
+        Position[] positions = getPositions(direction);
+        for(int i = 0; i < 4;i++){
+            positions[i] = new Position(positions[i].getX()+centralPosition.getX(),positions[i].getY()+centralPosition.getY());
+        }
+        return positions;
     }
 
 
