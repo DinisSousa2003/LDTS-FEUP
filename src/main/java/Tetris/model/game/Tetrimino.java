@@ -21,15 +21,20 @@ public abstract class Tetrimino {
 
     public Position getCentralPosition(){return centralPosition;}
 
+    public void setCentralPosition(Position position){
+        this.centralPosition = position;
+    }
+
     public void setDirection(TetriminoDirection direction){
         this.direction = direction;
     }
+
 
     public TetriminoDirection getDirection(){return this.direction;}
 
     public Position[]  rotateRight(){
         TetriminoDirection tempdirection = TetriminoDirection.UP;
-        Position[] positions = new Position[4];
+        Position[] positions;
         switch(this.direction){
             case UP:
                 tempdirection = TetriminoDirection.RIGHT;
@@ -47,6 +52,7 @@ public abstract class Tetrimino {
         }
 
         positions = getPositions(tempdirection);
+
         return positions;
     }
     public Position[] rotateLeft(){
