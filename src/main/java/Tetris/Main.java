@@ -1,11 +1,15 @@
 package Tetris;
 
 import Tetris.gui.LanternaGUI;
-import Tetris.model.Menu;
+import Tetris.model.menu.Menu;
+import Tetris.model.rules.Rules;
 import Tetris.states.MenuState;
+import Tetris.states.RulesState;
 import Tetris.states.State;
 
+import java.awt.*;
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 public class Main {
     private static Main instance;
@@ -13,19 +17,20 @@ public class Main {
     private final LanternaGUI gui;
 
 
-    private Main() throws IOException {
-        gui = new LanternaGUI(100, 100);
+    private Main() throws IOException, URISyntaxException, FontFormatException {
+        gui = new LanternaGUI(22, 22);
         state = new MenuState(new Menu());
+        //state = new RulesState(new Rules()); used for testing
     }
 
-    public static Main getInstance() throws IOException {
+    public static Main getInstance() throws IOException, URISyntaxException, FontFormatException {
         if (instance == null){
             instance = new Main();
         }
         return instance;
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, URISyntaxException, FontFormatException {
         getInstance().start();
     }
 
@@ -33,9 +38,10 @@ public class Main {
         this.state = state;
     }
 
-    //TODO: DEFINE FRAME RATE
+    public State getState() {return state;}
+
     private void start() throws IOException {
-        int FPS = 1;
+        int FPS = 40;
         int frameTime = 1000 / FPS;
 
         while (this.state != null) {

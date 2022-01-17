@@ -2,11 +2,11 @@ package Tetris.controller;
 
 import Tetris.Main;
 import Tetris.gui.GUI;
-import Tetris.model.Game;
+import Tetris.model.game.Screen;
 
-public class GameController extends Controller<Game>{
-    public GameController(Game game){
-        super(game);
+public class GameController extends Controller<Screen>{
+    public GameController(Screen screen){
+        super(screen);
     }
 
     @Override

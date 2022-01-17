@@ -2,7 +2,7 @@ package Tetris.states;
 
 import Tetris.controller.Controller;
 import Tetris.controller.MenuController;
-import Tetris.model.Menu;
+import Tetris.model.menu.Menu;
 import Tetris.viewer.MenuViewer;
 import Tetris.viewer.Viewer;
 
