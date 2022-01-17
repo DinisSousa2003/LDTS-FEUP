@@ -1,7 +1,5 @@
 package Tetris.gui;
 
-import Tetris.model.Position;
-
 import java.io.IOException;
 
 public interface GUI {
@@ -15,9 +13,6 @@ public interface GUI {
 
     void drawStats();
      */
-    void drawText(Position position, String text, String color);
-
-    void drawSquare(Position position, String color);
 
     void clear();
 

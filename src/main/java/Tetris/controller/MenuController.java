@@ -2,11 +2,7 @@ package Tetris.controller;
 
 import Tetris.Main;
 import Tetris.gui.GUI;
-import Tetris.model.game.Screen;
-import Tetris.model.menu.Menu;
-import Tetris.model.rules.Rules;
-import Tetris.states.GameState;
-import Tetris.states.RulesState;
+import Tetris.model.Menu;
 
 public class MenuController extends Controller<Menu> {
     public MenuController(Menu menu) {
@@ -14,21 +10,8 @@ public class MenuController extends Controller<Menu> {
     }
 
     @Override
+    //TODO: IMPLEMENT MENU POSSIBLE ACTIONS
     public void step(Main main, GUI.ACTION action, long time) {
-        switch (action) {
-            case UP:
-                getModel().previousEntry();
-                break;
-            case DOWN:
-                getModel().nextEntry();
-                break;
-            case SELECT:
-                if (getModel().isSelectedExit()) main.setState(null);
-                if (getModel().isSelectedPlay()) main.setState(new GameState(new Screen(10,20)));
-                if (getModel().isSelectedRules()) main.setState(new RulesState(new Rules()));
-                break;
-            case QUIT:
-                main.setState(null);
-        }
+        ;
     }
 }
