@@ -8,6 +8,7 @@ public class Screen {
     private QueueOfTetrimino queueOfTetrimino;
     private Board board;
     private Stats stats;
+    private Tetrimino tetrimino;
 
     public Screen(int width, int height) {
         this.width = width;
@@ -16,6 +17,7 @@ public class Screen {
         this.board = new Board(width, height);
         this.queueOfTetrimino = new QueueOfTetrimino();
         this.stats = new Stats();
+        //this.tetrimino = queueOfTetrimino.getNext();
     }
 
     public int getWidth() {
@@ -33,6 +35,8 @@ public class Screen {
     public Board getBoard() {
         return board;
     }
+
+    public Tetrimino getTetrimino() { return tetrimino; }
 
     public Stats getStats() {
         return stats;
