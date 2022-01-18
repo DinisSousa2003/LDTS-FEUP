@@ -53,7 +53,6 @@ public class GameViewer extends Viewer<Screen> {
                 gui.drawSquare(new Position(i, j), color.getColor("GRAY"));
             }
         }
-        int[] fila = {};
-        for(int i = 11; i < 19;i++)
+
     }
 }
