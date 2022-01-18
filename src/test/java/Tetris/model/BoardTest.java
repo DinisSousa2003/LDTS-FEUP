@@ -24,7 +24,7 @@ public class BoardTest {
 
     @Test
     void  canOccupy_isFull_addBlock_removeLine(){
-        Block b = new Block();
+        Block b = new Block("#FFFFFF");
 
         if(board.canOccupy(new Position(0,4))) board.addBlock(new Position(0,4),b);
         if(board.isLineFull(4)) board.removeLine(4);
