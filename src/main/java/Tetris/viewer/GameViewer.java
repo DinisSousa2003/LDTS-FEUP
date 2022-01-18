@@ -13,6 +13,6 @@ public class GameViewer extends Viewer<Screen> {
     @Override
     //TODO: DRAW THE MODEL OBJECTS ON THE INTERFACE
     protected void drawElements(GUI gui) throws IOException {
-        ;
+        
     }
 }
