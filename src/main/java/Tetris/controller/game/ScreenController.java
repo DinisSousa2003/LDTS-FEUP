@@ -8,11 +8,9 @@ import Tetris.model.menu.Menu;
 import Tetris.states.MenuState;
 
 public class ScreenController extends GameController{
-    private final TetriminoController tetriminoController;
 
     public ScreenController(Screen screen){
         super(screen);
-        this.tetriminoController = new TetriminoController(screen);
     }
 
     @Override
