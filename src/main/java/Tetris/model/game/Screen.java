@@ -9,7 +9,6 @@ public class Screen {
     private Board board;
     private Tetrimino tetrimino;
     private Stats stats;
-    private Tetrimino tetrimino;
 
     public Screen(int width, int height) {
         this.width = width;
