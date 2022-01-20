@@ -14,6 +14,7 @@ public class GameViewer extends Viewer<Screen> {
     @Override
     //TODO: DRAW THE MODEL OBJECTS ON THE INTERFACE
     protected void drawElements(GUI gui) throws IOException {
+        //CONTOUR FOR GAME
         for(int i = 0; i < 12; i++) {
             gui.drawSquare(new Position(i, 0), color.getColor("LIGHT_GRAY"));
         }
@@ -30,7 +31,7 @@ public class GameViewer extends Viewer<Screen> {
             gui.drawSquare(new Position(11, i), color.getColor("LIGHT_GRAY"));
         }
 
-
+        //STATS
         gui.drawText(new Position(14, 1), "P", color.getColor("RED"));
         gui.drawText(new Position(15, 1), "O", color.getColor("ORANGE"));
         gui.drawText(new Position(16, 1), "I", color.getColor("YELLOW"));
@@ -46,32 +47,9 @@ public class GameViewer extends Viewer<Screen> {
         gui.drawText(new Position(13, 7), "LINES", color.getColor("YELLOW"));
         gui.drawText(new Position(19, 7), "00", color.getColor("WHITE"));
 
-        for(int i = 14; i<20;i++)
-        {
-            for(int j = 10; j < 20;j++)
-            {
-                gui.drawSquare(new Position(i, j), color.getColor("GRAY"));
-            }
-        }
 
-        for(int i = 11;i <= 17;i+=3)
-        {
-            for(int j = 15;j <19;j++ )
-            {
-                gui.drawSquare(new Position(j, i), color.getColor("DARKER_GRAY"));
-                gui.drawSquare(new Position(j, i+1), color.getColor("DARKER_GRAY"));
-
-            }
-
-
-        }
-
-        //desenhar a fila
-
+        gui.drawQueue(super.getModel().getQueueOfTetrimino());
         gui.drawBoard(super.getModel().getBoard());
         gui.drawTetrimino(super.getModel().getTetrimino());
-
-
-
     }
 }

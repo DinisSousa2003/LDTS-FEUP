@@ -22,6 +22,10 @@ public class QueueOfTetrimino {
         return tetreminoQueue.remove();
     }
 
+    public ArrayList<Tetrimino> getTetreminoQueue() {
+        return new ArrayList(tetreminoQueue);
+    }
+
     private Tetrimino generateLast() {
         Random random = new Random();
         int num = random.nextInt(7);

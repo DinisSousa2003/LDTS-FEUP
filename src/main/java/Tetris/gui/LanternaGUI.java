@@ -4,6 +4,7 @@ import Tetris.model.Color;
 import Tetris.model.Position;
 import Tetris.model.game.Block;
 import Tetris.model.game.Board;
+import Tetris.model.game.QueueOfTetrimino;
 import Tetris.model.game.Tetrimino;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
@@ -27,6 +28,7 @@ import static java.awt.Font.PLAIN;
 
 public class LanternaGUI implements GUI{
     private final Screen screen;
+    private final Tetris.model.Color colors = new Color();
 
     public LanternaGUI(Screen screen) {
         this.screen = screen;
@@ -124,7 +126,6 @@ public class LanternaGUI implements GUI{
 
     @Override
     public void drawTetrimino(Tetrimino tetrimino){
-        Tetris.model.Color colors = new Color();
         if (tetrimino != null) {
             for (Position position : tetrimino.getActualPositions(tetrimino.getCentralPosition(), tetrimino.getDirection())) {
                 drawSquare(new Position(position.getX() + 1, 1 + position.getY()), colors.getColor(tetrimino.getColor()));
@@ -134,7 +135,6 @@ public class LanternaGUI implements GUI{
 
     @Override
     public void drawBoard(Board board){
-        Tetris.model.Color colors = new Color();
         for(int y = 0; y < board.getBoard().length; y++){
             for(int x = 0; x < board.getBoard()[0].length; x++){
                 if (board.getBoard()[y][x] != null)
@@ -142,4 +142,31 @@ public class LanternaGUI implements GUI{
             }
         }
     }
+
+    @Override
+    public void drawQueue(QueueOfTetrimino queue){
+        for(int i = 14; i<20;i++) {
+            for(int j = 10; j < 20;j++) {
+                drawSquare(new Position(i, j), colors.getColor("GRAY"));
+            }
+        }
+
+        for(int i = 11;i <= 17;i+=3) {
+            for(int j = 15;j <19;j++ ) {
+                drawSquare(new Position(j, i), colors.getColor("DARKER_GRAY"));
+                drawSquare(new Position(j, i+1), colors.getColor("DARKER_GRAY"));
+            }
+            Tetrimino tetrimino = queue.getTetreminoQueue().get((i - 11)/3);
+            drawTetriminoPos(tetrimino, new Position(17,  i + 1));
+        }
+    }
+
+    private void drawTetriminoPos(Tetrimino tetrimino, Position CentralPos){
+        if (tetrimino != null) {
+            for (Position position : tetrimino.getPositions(tetrimino.getDirection())) {
+                drawSquare(new Position(position.getX() + CentralPos.getX(), position.getY() + CentralPos.getY()), colors.getColor(tetrimino.getColor()));
+            }
+        }
+    }
 }
+
