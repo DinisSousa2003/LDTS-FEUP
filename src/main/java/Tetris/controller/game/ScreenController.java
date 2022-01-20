@@ -69,7 +69,10 @@ public class ScreenController extends GameController{
             }
 
             for (int i = getModel().getHeight() -1 ;i >= 0;i--) {
-                if(getModel().getBoard().isLineFull(i)) getModel().getBoard().removeLine(i);
+                if(getModel().getBoard().isLineFull(i)) {
+                    getModel().getBoard().removeLine(i);
+                    i--;
+                }
             }
 
             getModel().setTetrimino(getModel().getQueueOfTetrimino().popNext());
