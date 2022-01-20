@@ -133,10 +133,10 @@ public class LanternaGUI implements GUI{
     @Override
     public void drawBoard(Board board){
         Tetris.model.Color colors = new Color();
-        for(int x = 0; x < board.getBoard().length; x++){
-            for(int y = 0; y < board.getBoard()[0].length; y++){
-                if (board.getBoard()[x][y] != null)
-                    drawSquare(new Position(x+1,1-y), colors.getColor(board.getBoard()[x][y].getColor()));
+        for(int y = 0; y < board.getBoard().length; y++){
+            for(int x = 0; x < board.getBoard()[0].length; x++){
+                if (board.getBoard()[y][x] != null)
+                    drawSquare(new Position(x+1,1+y), colors.getColor(board.getBoard()[y][x].getColor()));
             }
         }
     }
