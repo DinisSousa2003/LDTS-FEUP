@@ -31,14 +31,14 @@ public class GameViewer extends Viewer<Screen> {
         }
 
 
-        gui.drawText(new Position(13, 1), "P", color.getColor("RED"));
-        gui.drawText(new Position(14, 1), "O", color.getColor("ORANGE"));
-        gui.drawText(new Position(15, 1), "I", color.getColor("YELLOW"));
-        gui.drawText(new Position(16, 1), "N", color.getColor("GREEN"));
-        gui.drawText(new Position(17, 1), "T", color.getColor("BLUE"));
-        gui.drawText(new Position(18, 1), "S", color.getColor("PURPLE"));
+        gui.drawText(new Position(14, 1), "P", color.getColor("RED"));
+        gui.drawText(new Position(15, 1), "O", color.getColor("ORANGE"));
+        gui.drawText(new Position(16, 1), "I", color.getColor("YELLOW"));
+        gui.drawText(new Position(17, 1), "N", color.getColor("GREEN"));
+        gui.drawText(new Position(18, 1), "T", color.getColor("BLUE"));
+        gui.drawText(new Position(19, 1), "S", color.getColor("PURPLE"));
 
-        gui.drawText(new Position(14, 3), "0000", color.getColor("WHITE"));
+        gui.drawText(new Position(15, 3), "0000", color.getColor("WHITE"));
 
         gui.drawText(new Position(13, 5), "LEVEL", color.getColor("YELLOW"));
         gui.drawText(new Position(20, 5), "0", color.getColor("WHITE"));
@@ -53,6 +53,25 @@ public class GameViewer extends Viewer<Screen> {
                 gui.drawSquare(new Position(i, j), color.getColor("GRAY"));
             }
         }
+
+        for(int i = 11;i <= 17;i+=3)
+        {
+            for(int j = 15;j <19;j++ )
+            {
+                gui.drawSquare(new Position(j, i), color.getColor("DARKER_GRAY"));
+                gui.drawSquare(new Position(j, i+1), color.getColor("DARKER_GRAY"));
+
+            }
+
+
+        }
+
+        //desenhar a fila
+
+        gui.drawBoard(super.getModel().getBoard());
+        gui.drawTetrimino(super.getModel().getTetrimino());
+
+
 
     }
 }

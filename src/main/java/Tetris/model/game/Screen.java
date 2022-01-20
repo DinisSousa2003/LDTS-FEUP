@@ -7,6 +7,7 @@ public class Screen {
 
     private QueueOfTetrimino queueOfTetrimino;
     private Board board;
+    private Tetrimino tetrimino;
     private Stats stats;
 
     public Screen(int width, int height) {
@@ -33,6 +34,8 @@ public class Screen {
     public Board getBoard() {
         return board;
     }
+
+    public Tetrimino getTetrimino(){ return tetrimino; }
 
     public Stats getStats() {
         return stats;

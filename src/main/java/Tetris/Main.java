@@ -21,8 +21,7 @@ public class Main {
 
     private Main() throws IOException, URISyntaxException, FontFormatException {
         gui = new LanternaGUI(22, 22);
-        //state = new MenuState(new Menu());
-        state = new GameState(new Screen(10,20));
+        state = new MenuState(new Menu());
     }
 
     public static Main getInstance() throws IOException, URISyntaxException, FontFormatException {
