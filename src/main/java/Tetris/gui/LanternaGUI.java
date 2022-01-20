@@ -1,5 +1,6 @@
 package Tetris.gui;
 
+import Tetris.model.Color;
 import Tetris.model.Position;
 import Tetris.model.game.Block;
 import Tetris.model.game.Board;
@@ -121,19 +122,21 @@ public class LanternaGUI implements GUI{
 
     @Override
     public void drawTetrimino(Tetrimino tetrimino){
+        Tetris.model.Color colors = new Color();
         if (tetrimino != null) {
             for (Position position : tetrimino.getActualPositions(tetrimino.getCentralPosition(), tetrimino.getDirection())) {
-                drawSquare(new Position(position.getX() + 1, 1- position.getY()), tetrimino.getColor());
+                drawSquare(new Position(position.getX() + 1, 1- position.getY()), colors.getColor(tetrimino.getColor()));
             }
         }
     }
 
     @Override
     public void drawBoard(Board board){
+        Tetris.model.Color colors = new Color();
         for(int x = 0; x < board.getBoard().length; x++){
             for(int y = 0; y < board.getBoard()[0].length; y++){
                 if (board.getBoard()[x][y] != null)
-                    drawSquare(new Position(x+1,1-y), board.getBoard()[x][y].getColor());
+                    drawSquare(new Position(x+1,1-y), colors.getColor(board.getBoard()[x][y].getColor()));
             }
         }
     }
