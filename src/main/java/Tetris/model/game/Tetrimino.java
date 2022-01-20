@@ -53,6 +53,25 @@ public abstract class Tetrimino {
         }
         return getActualPositions(this.centralPosition,tempdirection);
     }
+
+    public void  rotateRight(){
+        switch(this.direction){
+            case UP:
+                this.direction = TetriminoDirection.RIGHT;
+                break;
+            case RIGHT:
+                this.direction = TetriminoDirection.DOWN;
+                break;
+            case DOWN:
+                this.direction = TetriminoDirection.LEFT;
+                break;
+            case LEFT:
+                this.direction = TetriminoDirection.UP;
+                break;
+        }
+    }
+
+
     public Position[] rotateLeftPositions(){
         TetriminoDirection tempdirection = TetriminoDirection.UP;
         switch(this.direction) {
@@ -71,6 +90,24 @@ public abstract class Tetrimino {
         }
         return getActualPositions(this.centralPosition,tempdirection);
     }
+
+    public void rotateLeft(){
+        switch(this.direction) {
+            case UP:
+                this.direction = TetriminoDirection.LEFT;
+                break;
+            case LEFT:
+                this.direction = TetriminoDirection.DOWN;
+                break;
+            case DOWN:
+                this.direction = TetriminoDirection.RIGHT;
+                break;
+            case RIGHT:
+                this.direction = TetriminoDirection.UP;
+                break;
+        }
+    }
+
     public void moveRight(){
         this.centralPosition = new Position(centralPosition.getX()+1, centralPosition.getY() );
     }

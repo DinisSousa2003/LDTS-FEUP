@@ -49,6 +49,17 @@ public class Board {
         return full;
     }
 
+    public boolean canMove(Position[] positions){
+        boolean canMove = true;
+        for (Position p : positions) {
+            if (!canOccupy(p)) {
+                canMove = false;
+                break;
+            }
+        }
+        return canMove;
+    }
+
     public void removeLine(int line){
         for (int i = line; i > 0;i--){
             board[i] = board[i-1];
