@@ -24,7 +24,4 @@ public class Position {
         return (this.x == position.getX() && this.y == position.getY());
     }
 
-
-
-
 }

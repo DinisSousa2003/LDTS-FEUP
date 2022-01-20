@@ -25,6 +25,10 @@ public class Board {
         }*/
     }
 
+    public Block[][] getBoard(){
+        return board;
+    }
+
     public boolean canOccupy(Position pos) {
         if (pos.getX()<0 || pos.getX()>=board[0].length) return false;
         if (pos.getY()<0 || pos.getY()>=board.length) return false;

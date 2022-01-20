@@ -17,6 +17,10 @@ public abstract class Tetrimino {
 
     }
 
+    public String getColor() {
+        return color;
+    }
+
     public abstract Position[] getPositions(TetriminoDirection direction);
 
     public Position getCentralPosition(){return centralPosition;}

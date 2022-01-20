@@ -7,6 +7,7 @@ public class Screen {
 
     private QueueOfTetrimino queueOfTetrimino;
     private Board board;
+    private Tetrimino tetrimino;
     private Stats stats;
     private Tetrimino tetrimino;
 

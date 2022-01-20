@@ -1,6 +1,9 @@
 package Tetris.gui;
 
 import Tetris.model.Position;
+import Tetris.model.game.Block;
+import Tetris.model.game.Board;
+import Tetris.model.game.Tetrimino;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
@@ -114,5 +117,24 @@ public class LanternaGUI implements GUI{
     @Override
     public void close() throws IOException {
         screen.close();
+    }
+
+    @Override
+    public void drawTetrimino(Tetrimino tetrimino){
+        if (tetrimino != null) {
+            for (Position position : tetrimino.getActualPositions(tetrimino.getCentralPosition(), tetrimino.getDirection())) {
+                drawSquare(position, tetrimino.getColor());
+            }
+        }
+    }
+
+    @Override
+    public void drawBoard(Board board){
+        for(int x = 0; x < board.getBoard().length; x++){
+            for(int y = 0; y < board.getBoard()[0].length; y++){
+                if (board.getBoard()[x][y] != null)
+                    drawSquare(new Position(x, y), board.getBoard()[x][y].getColor());
+            }
+        }
     }
 }
