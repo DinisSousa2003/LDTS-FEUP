@@ -115,7 +115,7 @@ public abstract class Tetrimino {
         this.centralPosition = new Position(centralPosition.getX()-1, centralPosition.getY() );
     }
     public void moveDown(){
-        this.centralPosition = new Position(centralPosition.getX(), centralPosition.getY()-1);
+        this.centralPosition = new Position(centralPosition.getX(), centralPosition.getY()+1);
     }
     public Position[] moveRightPositions(){
         return getActualPositions( new Position(centralPosition.getX()+1, centralPosition.getY() ),this.direction);

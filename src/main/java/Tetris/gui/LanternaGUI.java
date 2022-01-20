@@ -125,7 +125,7 @@ public class LanternaGUI implements GUI{
         Tetris.model.Color colors = new Color();
         if (tetrimino != null) {
             for (Position position : tetrimino.getActualPositions(tetrimino.getCentralPosition(), tetrimino.getDirection())) {
-                drawSquare(new Position(position.getX() + 1, 1- position.getY()), colors.getColor(tetrimino.getColor()));
+                drawSquare(new Position(position.getX() + 1, 1 + position.getY()), colors.getColor(tetrimino.getColor()));
             }
         }
     }
