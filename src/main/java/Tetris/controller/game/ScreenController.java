@@ -3,6 +3,7 @@ package Tetris.controller.game;
 import Tetris.Main;
 import Tetris.gui.GUI;
 import Tetris.model.Position;
+import Tetris.model.game.Block;
 import Tetris.model.game.Screen;
 import Tetris.model.menu.Menu;
 import Tetris.states.MenuState;
@@ -51,9 +52,16 @@ public class ScreenController extends GameController{
         boolean canMove = getModel().getBoard().canMove(positions);
         if (canMove) getModel().getTetrimino().moveDown();
         else {
-            //drop block
+            positions = getModel().getTetrimino().getActualPositions(getModel().getTetrimino().getCentralPosition(),getModel().getTetrimino().getDirection());
+            for(Position position : positions) {
+                getModel().getBoard().addBlock(position,new Block(getModel().getTetrimino().getColor()));
+            }
 
-            //check for full lines
+            for (int i = getModel().getHeight() -1 ;i >= 0;i--) {
+                if(getModel().getBoard().isLineFull(i)) getModel().getBoard().removeLine(i);
+            }
+
+            getModel().setTetrimino(getModel().getQueueOfTetrimino().popNext());
         }
     }
 

@@ -137,6 +137,7 @@ public class LanternaGUI implements GUI{
             for(int y = 0; y < board.getBoard()[0].length; y++){
                 if (board.getBoard()[x][y] != null)
                     drawSquare(new Position(x+1,1-y), colors.getColor(board.getBoard()[x][y].getColor()));
+
             }
         }
     }
