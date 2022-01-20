@@ -17,7 +17,7 @@ public class Screen {
         this.board = new Board(width, height);
         this.queueOfTetrimino = new QueueOfTetrimino();
         this.stats = new Stats();
-        //this.tetrimino = queueOfTetrimino.getNext();
+        this.tetrimino = queueOfTetrimino.popNext();
     }
 
     public int getWidth() {

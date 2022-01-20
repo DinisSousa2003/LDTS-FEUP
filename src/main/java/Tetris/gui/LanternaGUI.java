@@ -123,7 +123,7 @@ public class LanternaGUI implements GUI{
     public void drawTetrimino(Tetrimino tetrimino){
         if (tetrimino != null) {
             for (Position position : tetrimino.getActualPositions(tetrimino.getCentralPosition(), tetrimino.getDirection())) {
-                drawSquare(position, tetrimino.getColor());
+                drawSquare(new Position(position.getX() + 1, 1- position.getY()), tetrimino.getColor());
             }
         }
     }
@@ -133,7 +133,7 @@ public class LanternaGUI implements GUI{
         for(int x = 0; x < board.getBoard().length; x++){
             for(int y = 0; y < board.getBoard()[0].length; y++){
                 if (board.getBoard()[x][y] != null)
-                    drawSquare(new Position(x, y), board.getBoard()[x][y].getColor());
+                    drawSquare(new Position(x+1,1-y), board.getBoard()[x][y].getColor());
             }
         }
     }
