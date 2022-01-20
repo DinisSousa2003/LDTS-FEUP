@@ -8,13 +8,20 @@ import Tetris.model.menu.Menu;
 import Tetris.states.MenuState;
 
 public class ScreenController extends GameController{
+    private long lastMovement;
 
     public ScreenController(Screen screen){
         super(screen);
+        this.lastMovement = 0;
     }
 
     @Override
     public void step(Main main, GUI.ACTION action, long time) {
+        if(time - lastMovement > 1000) {
+            moveDown();
+            this.lastMovement = time;
+        }
+
         switch (action){
             case QUIT:
                 main.setState(new MenuState(new Menu()));
