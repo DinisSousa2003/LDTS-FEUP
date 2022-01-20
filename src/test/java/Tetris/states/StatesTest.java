@@ -67,9 +67,7 @@ public class StatesTest {
     @Test
     void menuToGameToMenu(){
         menuController.step(main, GUI.ACTION.SELECT, 0);
-        System.out.println(main.getState().getClass());
         Assertions.assertEquals(Tetris.states.GameState.class, main.getState().getClass());
-        System.out.println(main.getState().getClass());
         gameController.step(main, GUI.ACTION.QUIT, 0);
         Assertions.assertEquals(Tetris.states.MenuState.class, main.getState().getClass());
     }
