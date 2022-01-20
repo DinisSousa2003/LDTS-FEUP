@@ -23,12 +23,16 @@ public class ScreenController extends GameController{
         int endOfGame = 1;
         if(time - lastMovement > 1000) {
             endOfGame = moveDown();
-            if (endOfGame == -1) main.setState(new EndGameState(new EndGame()));
+            if (endOfGame == -1) {
+                this.getModel().stopMusic();
+                main.setState(new EndGameState(new EndGame()));
+            }
             this.lastMovement = time;
         }
 
         switch (action){
             case QUIT:
+                this.getModel().stopMusic();
                 main.setState(new MenuState(new Menu()));
                 break;
             case DOWN:
@@ -52,7 +56,10 @@ public class ScreenController extends GameController{
             default:
                 break;
         }
-        if (endOfGame == -1) main.setState(new EndGameState(new EndGame()));
+        if (endOfGame == -1) {
+            this.getModel().stopMusic();
+            main.setState(new EndGameState(new EndGame()));
+        }
     }
 
     private int moveDown() {
