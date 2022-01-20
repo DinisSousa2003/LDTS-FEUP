@@ -23,6 +23,10 @@ public class Color{
         COLORS.put("BLUE", "#0000FF");
         COLORS.put("ORANGE", "#FF7F00");
         COLORS.put("WHITE", "#FFFFFF");
+        COLORS.put("LIGHT_GRAY","#B3B3B3");
+        COLORS.put("GRAY","#666666");
+        COLORS.put("DARKER_GRAY","#4B4B4B");
+
     }
 
     private void loadRAINBOW(){

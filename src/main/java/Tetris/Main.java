@@ -1,8 +1,10 @@
 package Tetris;
 
 import Tetris.gui.LanternaGUI;
+import Tetris.model.game.Screen;
 import Tetris.model.menu.Menu;
 import Tetris.model.rules.Rules;
+import Tetris.states.GameState;
 import Tetris.states.MenuState;
 import Tetris.states.RulesState;
 import Tetris.states.State;
@@ -20,7 +22,6 @@ public class Main {
     private Main() throws IOException, URISyntaxException, FontFormatException {
         gui = new LanternaGUI(22, 22);
         state = new MenuState(new Menu());
-        //state = new RulesState(new Rules()); used for testing
     }
 
     public static Main getInstance() throws IOException, URISyntaxException, FontFormatException {
