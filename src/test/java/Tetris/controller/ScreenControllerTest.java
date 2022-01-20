@@ -89,7 +89,7 @@ public class ScreenControllerTest {
 
         controller.getModel().getTetrimino().setCentralPosition(new Position(5, 15));
         controller.step(main, GUI.ACTION.DOWN, 1500);
-        Assertions.assertEquals(new Position(5, 13),controller.getModel().getTetrimino().getCentralPosition());
+        Assertions.assertEquals(new Position(5, 17),controller.getModel().getTetrimino().getCentralPosition());
     }
 
     @Test
