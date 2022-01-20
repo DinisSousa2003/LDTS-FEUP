@@ -133,35 +133,38 @@ public class LanternaGUI implements GUI{
 
     @Override
     public void drawBoard(Board board){
-        for(int x = 0; x < board.getBoard().length; x++){
-            for(int y = 0; y < board.getBoard()[0].length; y++){
-                if (board.getBoard()[x][y] != null)
-                    drawSquare(new Position(x+1,1-y), colors.getColor(board.getBoard()[x][y].getColor()));
-
+        for(int y = 0; y < board.getBoard().length; y++){
+            for(int x = 0; x < board.getBoard()[0].length; x++){
+                if (board.getBoard()[y][x] != null)
+                    drawSquare(new Position(x+1,1+y), colors.getColor(board.getBoard()[y][x].getColor()));
             }
         }
     }
 
     @Override
     public void drawQueue(QueueOfTetrimino queue){
-        for(int i = 14; i<20;i++)
-        {
-            for(int j = 10; j < 20;j++)
-            {
+        for(int i = 14; i<20;i++) {
+            for(int j = 10; j < 20;j++) {
                 drawSquare(new Position(i, j), colors.getColor("GRAY"));
             }
         }
 
-        for(int i = 11;i <= 17;i+=3)
-        {
-            for(int j = 15;j <19;j++ )
-            {
+        for(int i = 11;i <= 17;i+=3) {
+            for(int j = 15;j <19;j++ ) {
                 drawSquare(new Position(j, i), colors.getColor("DARKER_GRAY"));
                 drawSquare(new Position(j, i+1), colors.getColor("DARKER_GRAY"));
             }
             Tetrimino tetrimino = queue.getTetreminoQueue().get((i - 11)/3);
-            tetrimino.setCentralPosition(new Position(16,  i));
-            drawTetrimino(tetrimino);
+            drawTetriminoPos(tetrimino, new Position(17,  i + 1));
+        }
+    }
+
+    private void drawTetriminoPos(Tetrimino tetrimino, Position CentralPos){
+        if (tetrimino != null) {
+            for (Position position : tetrimino.getPositions(tetrimino.getDirection())) {
+                drawSquare(new Position(position.getX() + CentralPos.getX(), position.getY() + CentralPos.getY()), colors.getColor(tetrimino.getColor()));
+            }
         }
     }
 }
+
