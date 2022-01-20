@@ -2,7 +2,9 @@ package Tetris.model.game;
 
 import Tetris.model.Color;
 import Tetris.model.Position;
+import Tetris.model.game.Tetriminos.*;
 import com.googlecode.lanterna.TextColor;
+import com.sun.jdi.ClassType;
 
 public abstract class Tetrimino {
 
@@ -15,6 +17,20 @@ public abstract class Tetrimino {
         this.direction = TetriminoDirection.UP;
         this.centralPosition = new Position(position.getX(), position.getY());
 
+    }
+
+    public Tetrimino copy() {
+        Tetrimino t = new I(this.centralPosition);
+        if(this instanceof J) t = new J(this.centralPosition);
+        else if(this instanceof L) t = new L(this.centralPosition);
+        else if(this instanceof O) t = new O(this.centralPosition);
+        else if(this instanceof S) t = new S(this.centralPosition);
+        else if(this instanceof T) t = new T(this.centralPosition);
+        else if(this instanceof Z) t = new Z(this.centralPosition);
+
+        t.setDirection(this.direction);
+
+        return t;
     }
 
     public String getColor() {

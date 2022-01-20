@@ -134,6 +134,15 @@ public class LanternaGUI implements GUI{
     }
 
     @Override
+    public void drawShadowTetrimino(Tetrimino tetrimino){
+        if (tetrimino != null) {
+            for (Position position : tetrimino.getActualPositions(tetrimino.getCentralPosition(), tetrimino.getDirection())) {
+                drawSquare(new Position(position.getX() + 1, 1 + position.getY()), colors.getShadowColor(tetrimino.getColor()));
+            }
+        }
+    }
+
+    @Override
     public void drawBoard(Board board){
         for(int y = 0; y < board.getBoard().length; y++){
             for(int x = 0; x < board.getBoard()[0].length; x++){

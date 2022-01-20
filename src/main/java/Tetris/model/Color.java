@@ -7,11 +7,13 @@ import java.util.Map;
 
 public class Color{
     private Map<String, String> COLORS = new HashMap<String, String>();
+    private Map<String, String> SHADOW_COLORS = new HashMap<String, String>();
     private List<String> RAINBOW = new ArrayList<>();
 
     public Color(){
         loadCOLORS();
         loadRAINBOW();
+        loadShadowColors();
     }
 
     private void loadCOLORS(){
@@ -27,6 +29,17 @@ public class Color{
         COLORS.put("GRAY","#666666");
         COLORS.put("DARKER_GRAY","#4B4B4B");
 
+
+    }
+
+    private void loadShadowColors() {   //mudar as cores
+        SHADOW_COLORS.put("CYAN", "#007777");
+        SHADOW_COLORS.put("YELLOW", "#777700");
+        SHADOW_COLORS.put("PURPLE", "#440044");
+        SHADOW_COLORS.put("GREEN", "#007700");
+        SHADOW_COLORS.put("RED", "#770000");
+        SHADOW_COLORS.put("BLUE", "#000077");
+        SHADOW_COLORS.put("ORANGE", "#663300");
     }
 
     private void loadRAINBOW(){
@@ -49,6 +62,10 @@ public class Color{
 
     public String getColor(String color){
         return COLORS.get(color);
+    }
+
+    public String getShadowColor(String color){
+        return SHADOW_COLORS.get(color);
     }
 }
 

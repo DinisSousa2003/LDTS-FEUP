@@ -53,6 +53,8 @@ public class ScreenController extends GameController{
                 break;
         }
         if (endOfGame == -1) main.setState(new EndGameState(new EndGame()));
+
+        dropShadow();
     }
 
     private int moveDown() {
@@ -76,6 +78,7 @@ public class ScreenController extends GameController{
             }
 
             getModel().setTetrimino(getModel().getQueueOfTetrimino().popNext());
+            getModel().setShadowTetrimino(getModel().getTetrimino().copy());
 
             positions = getModel().getTetrimino().getActualPositions(getModel().getTetrimino().getCentralPosition(),getModel().getTetrimino().getDirection());
             canMove = getModel().getBoard().canMove(positions);
@@ -95,6 +98,19 @@ public class ScreenController extends GameController{
             canMove = moveDown();
         }
         return 0;
+    }
+
+    private void dropShadow() {
+        if (getModel().getTetrimino() == null) return;
+        getModel().getShadowTetrimino().setCentralPosition(getModel().getTetrimino().getCentralPosition());
+        getModel().getShadowTetrimino().setDirection(getModel().getTetrimino().getDirection());
+        boolean canMove = true;
+        Position[] positions;
+        while (canMove){
+            positions = getModel().getShadowTetrimino().moveDownPositions();
+            canMove = getModel().getBoard().canMove(positions);
+            if (canMove) getModel().getShadowTetrimino().moveDown();
+        }
     }
 
     private void moveRight() {

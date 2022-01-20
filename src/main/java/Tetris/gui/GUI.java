@@ -20,6 +20,8 @@ public interface GUI {
 
     void drawTetrimino(Tetrimino tetrimino);
 
+    void drawShadowTetrimino(Tetrimino tetrimino);
+
     void drawText(Position position, String text, String color);
 
     void drawSquare(Position position, String color);

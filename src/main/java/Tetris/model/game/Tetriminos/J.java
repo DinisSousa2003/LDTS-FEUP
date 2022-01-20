@@ -12,7 +12,10 @@ public class J extends Tetrimino {
         this.color = "BLUE";
     }
 
-
+    public J(Tetrimino tetrimino) {
+        super(tetrimino.getCentralPosition());
+        this.color = "BLUE";
+    }
 
     public Position[] getPositions(TetriminoDirection direction){
         Position[] positions = new Position[4];

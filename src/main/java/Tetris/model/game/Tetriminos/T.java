@@ -11,6 +11,11 @@ public class T extends Tetrimino {
         this.color = "PURPLE";
     }
 
+    public T(Tetrimino tetrimino) {
+        super(tetrimino.getCentralPosition());
+        this.color = "PURPLE";
+    }
+
     public Position[] getPositions(TetriminoDirection direction) {
         Position[] positions = new Position[4];
         switch (direction) {

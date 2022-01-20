@@ -50,6 +50,7 @@ public class GameViewer extends Viewer<Screen> {
 
         gui.drawQueue(super.getModel().getQueueOfTetrimino());
         gui.drawBoard(super.getModel().getBoard());
+        gui.drawShadowTetrimino(super.getModel().getShadowTetrimino());
         gui.drawTetrimino(super.getModel().getTetrimino());
     }
 }

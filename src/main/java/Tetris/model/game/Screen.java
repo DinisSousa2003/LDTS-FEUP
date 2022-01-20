@@ -1,5 +1,7 @@
 package Tetris.model.game;
 
+import Tetris.model.Position;
+
 public class Screen {
 
     private final int width;
@@ -8,6 +10,7 @@ public class Screen {
     private QueueOfTetrimino queueOfTetrimino;
     private Board board;
     private Tetrimino tetrimino;
+    private Tetrimino shadowTetrimino;
     private Stats stats;
 
     public Screen(int width, int height) {
@@ -18,6 +21,8 @@ public class Screen {
         this.queueOfTetrimino = new QueueOfTetrimino();
         this.stats = new Stats();
         this.tetrimino = queueOfTetrimino.popNext();
+        this.shadowTetrimino = this.tetrimino.copy();
+
     }
 
     public int getWidth() {
@@ -39,6 +44,14 @@ public class Screen {
     public Tetrimino getTetrimino() { return tetrimino; }
     
     public void setTetrimino(Tetrimino tetrimino) { this.tetrimino = tetrimino;}
+
+    public Tetrimino getShadowTetrimino() {
+        return shadowTetrimino;
+    }
+
+    public void setShadowTetrimino(Tetrimino shadowTetrimino) {
+        this.shadowTetrimino = shadowTetrimino;
+    }
 
     public Stats getStats() {
         return stats;
