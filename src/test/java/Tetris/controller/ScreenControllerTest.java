@@ -31,52 +31,54 @@ public class ScreenControllerTest {
     void setUp() throws IOException, URISyntaxException, FontFormatException {
         main = Main.getInstance();
         controller = new ScreenController(new Screen(10,20));
-        board = new Board(20, 20);
     }
 
     @Test
     void moveTetriminoRight(){
 
-        tetrimino = new O(new Position(10,1));
+        controller.getModel().setTetrimino(new O(new Position(6,1)));
 
-        tetrimino.setCentralPosition(new Position(15, 15));
+        controller.getModel().getTetrimino().setCentralPosition(new Position(5, 15));
         controller.step(main, GUI.ACTION.RIGHT,0);
-        Assertions.assertEquals(new Position(16, 15), tetrimino.getActualPositions(tetrimino.getCentralPosition(),tetrimino.getDirection()));
-        Assertions.assertEquals(TetriminoDirection.UP,tetrimino.getDirection());
+        Assertions.assertEquals(new Position(6, 15), controller.getModel().getTetrimino().getCentralPosition());
+        Assertions.assertEquals(TetriminoDirection.UP,controller.getModel().getTetrimino().getDirection());
 
-        tetrimino.setCentralPosition(new Position(20, 15));
+        controller.getModel().getTetrimino().setCentralPosition(new Position(10, 15));
         controller.step(main, GUI.ACTION.RIGHT,0);
-        Assertions.assertEquals(new Position(20, 15), tetrimino.getActualPositions(tetrimino.getCentralPosition(),tetrimino.getDirection()));
-        Assertions.assertEquals(TetriminoDirection.UP,tetrimino.getDirection());
+        Assertions.assertEquals(new Position(10, 15), controller.getModel().getTetrimino().getCentralPosition());
+        Assertions.assertEquals(TetriminoDirection.UP,controller.getModel().getTetrimino().getDirection());
     }
 
     @Test
     void moveTetriminoLeft(){
-        tetrimino = new I(new Position(10,0));
 
-        tetrimino.setCentralPosition(new Position(15, 15));
-        controller.step(main, GUI.ACTION.LEFT,0);
-        Assertions.assertEquals(new Position(14, 15), tetrimino.getActualPositions(tetrimino.getCentralPosition(),tetrimino.getDirection()));
-        Assertions.assertEquals(TetriminoDirection.UP,tetrimino.getDirection());
+        controller.getModel().setTetrimino(new I(new Position(6,0)));
 
-        tetrimino.setCentralPosition(new Position(2, 15));
+        controller.getModel().getTetrimino().setCentralPosition(new Position(5, 15));
         controller.step(main, GUI.ACTION.LEFT,0);
-        Assertions.assertEquals(new Position(2, 15), tetrimino.getActualPositions(tetrimino.getCentralPosition(),tetrimino.getDirection()));
-        Assertions.assertEquals(TetriminoDirection.UP,tetrimino.getDirection());
+        Assertions.assertEquals(new Position(4, 15), controller.getModel().getTetrimino().getCentralPosition());
+        Assertions.assertEquals(TetriminoDirection.UP,controller.getModel().getTetrimino().getDirection());
+
+        controller.getModel().getTetrimino().setCentralPosition(new Position(2, 15));
+        controller.step(main, GUI.ACTION.LEFT,0);
+        Position p = controller.getModel().getTetrimino().getCentralPosition();
+        Assertions.assertEquals(new Position(2, 15), controller.getModel().getTetrimino().getCentralPosition());
+        Assertions.assertEquals(TetriminoDirection.UP,controller.getModel().getTetrimino().getDirection());
     }
 
     @Test
     void rotateTetriminoRight(){
-        tetrimino = new S(new Position(10,0));
 
-        tetrimino.setCentralPosition(new Position(15, 15));
+        controller.getModel().setTetrimino(new S(new Position(5,0)));
+
+        controller.getModel().getTetrimino().setCentralPosition(new Position(5, 15));
         controller.step(main, GUI.ACTION.UP,0);
-        Assertions.assertEquals(new Position(15, 15), tetrimino.getActualPositions(tetrimino.getCentralPosition(),tetrimino.getDirection()));
-        Assertions.assertEquals(TetriminoDirection.RIGHT,tetrimino.getDirection());
+        Assertions.assertEquals(new Position(5, 15), controller.getModel().getTetrimino().getCentralPosition());
+        Assertions.assertEquals(TetriminoDirection.RIGHT,controller.getModel().getTetrimino().getDirection());
         controller.step(main, GUI.ACTION.UP,0);
         controller.step(main, GUI.ACTION.UP,0);
         controller.step(main, GUI.ACTION.UP,0);
-        Assertions.assertEquals(TetriminoDirection.UP,tetrimino.getDirection());
+        Assertions.assertEquals(TetriminoDirection.UP,controller.getModel().getTetrimino().getDirection());
 
 
     }

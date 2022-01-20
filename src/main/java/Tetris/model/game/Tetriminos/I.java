@@ -18,25 +18,25 @@ public class I extends Tetrimino {
                 positions[0] = new Position(0,0);
                 positions[1] = new Position(-1,0);
                 positions[2] = new Position(1,0);
-                positions[3] = new Position(2,0);
+                positions[3] = new Position(-2,0);
                 break;
             case RIGHT:
-                positions[0] = new Position(0,0);
-                positions[1] = new Position(0,-1);
-                positions[2] = new Position(0,-2);
-                positions[3] = new Position(0,1);
+                positions[0] = new Position(-1,0);
+                positions[1] = new Position(-1,-1);
+                positions[2] = new Position(-1,-2);
+                positions[3] = new Position(-1,1);
                 break;
             case DOWN:
                 positions[0] = new Position(-1,-1);
                 positions[1] = new Position(0,-1);
                 positions[2] = new Position(1,-1);
-                positions[3] = new Position(2,-1);
+                positions[3] = new Position(-2,-1);
                 break;
             case LEFT:
-                positions[0] = new Position(1,0);
-                positions[1] = new Position(1,-1);
-                positions[2] = new Position(1,-2);
-                positions[3] = new Position(1,1);
+                positions[0] = new Position(0,0);
+                positions[1] = new Position(0,-1);
+                positions[2] = new Position(0,-2);
+                positions[3] = new Position(0,1);
         }
         return positions;
     }

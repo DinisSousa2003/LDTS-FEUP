@@ -37,6 +37,8 @@ public class Screen {
     }
 
     public Tetrimino getTetrimino() { return tetrimino; }
+    
+    public void setTetrimino(Tetrimino tetrimino) { this.tetrimino = tetrimino;}
 
     public Stats getStats() {
         return stats;
