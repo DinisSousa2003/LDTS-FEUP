@@ -2,10 +2,12 @@ package Tetris.controller.game;
 
 import Tetris.Main;
 import Tetris.gui.GUI;
+import Tetris.model.EndGame;
 import Tetris.model.Position;
 import Tetris.model.game.Block;
 import Tetris.model.game.Screen;
 import Tetris.model.menu.Menu;
+import Tetris.states.EndGameState;
 import Tetris.states.MenuState;
 
 public class ScreenController extends GameController{
@@ -18,8 +20,10 @@ public class ScreenController extends GameController{
 
     @Override
     public void step(Main main, GUI.ACTION action, long time) {
+        int endOfGame = 1;
         if(time - lastMovement > 1000) {
-            moveDown();
+            endOfGame = moveDown();
+            if (endOfGame == -1) main.setState(new EndGameState(new EndGame()));
             this.lastMovement = time;
         }
 
@@ -28,7 +32,7 @@ public class ScreenController extends GameController{
                 main.setState(new MenuState(new Menu()));
                 break;
             case DOWN:
-                moveDown();
+                endOfGame = moveDown();
                 break;
             case RIGHT:
                 moveRight();
@@ -42,15 +46,22 @@ public class ScreenController extends GameController{
             case Z:
                 rotateLeft();
                 break;
+            case SPACE:
+                endOfGame = dropDown();
+                break;
             default:
                 break;
         }
+        if (endOfGame == -1) main.setState(new EndGameState(new EndGame()));
     }
 
-    private void moveDown() {
+    private int moveDown() {
         Position[] positions = getModel().getTetrimino().moveDownPositions();
         boolean canMove = getModel().getBoard().canMove(positions);
-        if (canMove) getModel().getTetrimino().moveDown();
+        if (canMove) {
+            getModel().getTetrimino().moveDown();
+            return 1;
+        }
         else {
             positions = getModel().getTetrimino().getActualPositions(getModel().getTetrimino().getCentralPosition(),getModel().getTetrimino().getDirection());
             for(Position position : positions) {
@@ -62,7 +73,25 @@ public class ScreenController extends GameController{
             }
 
             getModel().setTetrimino(getModel().getQueueOfTetrimino().popNext());
+
+            positions = getModel().getTetrimino().getActualPositions(getModel().getTetrimino().getCentralPosition(),getModel().getTetrimino().getDirection());
+            canMove = getModel().getBoard().canMove(positions);
+            if(!canMove){
+                getModel().setTetrimino(null);
+                return -1;
+            }
+
+            return 0;
         }
+    }
+
+    private int dropDown() {
+        int canMove = moveDown();
+        while (canMove != 0){
+            if(canMove == -1) return -1;
+            canMove = moveDown();
+        }
+        return 0;
     }
 
     private void moveRight() {
