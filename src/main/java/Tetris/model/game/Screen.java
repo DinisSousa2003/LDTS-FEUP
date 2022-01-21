@@ -1,7 +1,5 @@
 package Tetris.model.game;
 
-import Tetris.model.Position;
-
 public class Screen {
 
     private final int width;

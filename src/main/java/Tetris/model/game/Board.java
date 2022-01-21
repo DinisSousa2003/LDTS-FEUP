@@ -2,9 +2,7 @@ package Tetris.model.game;
 
 import Tetris.model.Position;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Vector;
 
 public class Board {
 
@@ -25,8 +23,7 @@ public class Board {
     public boolean canOccupy(Position pos) {
         if (pos.getX()<0 || pos.getX()>=board[0].length) return false;
         if (pos.getY()<0 || pos.getY()>=board.length) return false;
-        if (board[pos.getY()][pos.getX()] == null) return true;
-        return false;
+        return board[pos.getY()][pos.getX()] == null;
     }
 
     public boolean isLineFull(int line){
@@ -57,19 +54,14 @@ public class Board {
         for (int j = line; j > 0;j--){
             for (int i = 0; i < board[0].length; i++) {
                 board[j][i] = board[j-1][i];
-                System.out.println(board[j][i] + " , " + board[j-1][i]);
             }
         }
-        for (int i = 0; i < board[0].length; i++) board[0][i] = null;
+        Arrays.fill(board[0], null);
 
     }
 
     public void addBlock(Position pos, Block block){
         board[pos.getY()][pos.getX()] = block;
     }
-
-    //public boolean isEmpty(Position pos){return true;}
-
-    //public void removeBlock(Position pos){;}
 
 }

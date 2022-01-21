@@ -2,7 +2,6 @@ package Tetris.model;
 
 import Tetris.model.game.Block;
 import Tetris.model.game.Board;
-import Tetris.model.menu.Menu;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

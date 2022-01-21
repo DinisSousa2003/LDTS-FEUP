@@ -1,12 +1,8 @@
 package Tetris;
 
 import Tetris.gui.LanternaGUI;
-import Tetris.model.game.Screen;
 import Tetris.model.menu.Menu;
-import Tetris.model.rules.Rules;
-import Tetris.states.GameState;
 import Tetris.states.MenuState;
-import Tetris.states.RulesState;
 import Tetris.states.State;
 
 import java.awt.*;

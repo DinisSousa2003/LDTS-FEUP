@@ -4,16 +4,13 @@ import Tetris.gui.GUI;
 import Tetris.model.Position;
 import Tetris.model.rules.Rules;
 
-import java.io.IOException;
-
 public class RulesViewer extends Viewer<Rules>{
     public RulesViewer(Rules rules){
         super(rules);
     }
 
     @Override
-    //TODO: DRAW THE RULES OF THE GAME ON THE INTERFACE
-    protected void drawElements(GUI gui) throws IOException {
+    protected void drawElements(GUI gui) {
 
         for(int i = 0; i < 22; i++) {
             gui.drawSquare(new Position(i, 0), color.getRAINBOW().get(i % 7));

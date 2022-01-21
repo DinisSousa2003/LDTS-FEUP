@@ -20,7 +20,6 @@ public class Position {
     @Override
     public boolean equals(Object obj) {
         final Position position = (Position) obj;
-        //return super.equals(position);
         return (this.x == position.getX() && this.y == position.getY());
     }
 

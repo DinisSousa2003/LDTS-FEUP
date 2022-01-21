@@ -2,10 +2,7 @@ package Tetris.gui;
 
 import Tetris.model.Color;
 import Tetris.model.Position;
-import Tetris.model.game.Block;
-import Tetris.model.game.Board;
-import Tetris.model.game.QueueOfTetrimino;
-import Tetris.model.game.Tetrimino;
+import Tetris.model.game.*;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
@@ -24,9 +21,6 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
-
-import static java.awt.Font.MONOSPACED;
-import static java.awt.Font.PLAIN;
 
 public class LanternaGUI implements GUI{
     private final Screen screen;
@@ -72,8 +66,7 @@ public class LanternaGUI implements GUI{
         ge.registerFont(font);
 
         Font loadedFont = font.deriveFont(Font.PLAIN, 30);
-        AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);
-        return fontConfig;
+        return AWTTerminalFontConfiguration.newInstance(loadedFont);
     }
 
     @Override
@@ -172,6 +165,24 @@ public class LanternaGUI implements GUI{
             Tetrimino tetrimino = queue.getTetreminoQueue().get((i - 11)/3);
             drawTetriminoPos(tetrimino, new Position(17,  i + 1));
         }
+    }
+
+    @Override
+    public void drawStats(Stats stats) {
+        drawText(new Position(14, 1), "P", colors.getColor("RED"));
+        drawText(new Position(15, 1), "O", colors.getColor("ORANGE"));
+        drawText(new Position(16, 1), "I", colors.getColor("YELLOW"));
+        drawText(new Position(17, 1), "N", colors.getColor("GREEN"));
+        drawText(new Position(18, 1), "T", colors.getColor("BLUE"));
+        drawText(new Position(19, 1), "S", colors.getColor("PURPLE"));
+
+        drawText(new Position(15, 3), String.format("%04d", stats.getPoints()), colors.getColor("WHITE"));
+
+        drawText(new Position(13, 5), "LEVEL", colors.getColor("YELLOW"));
+        drawText(new Position(20, 5), String.format("%01d", stats.getLevel()), colors.getColor("WHITE"));
+
+        drawText(new Position(13, 7), "LINES", colors.getColor("YELLOW"));
+        drawText(new Position(19, 7), String.format("%02d", stats.getLines()), colors.getColor("WHITE"));
     }
 
     private void drawTetriminoPos(Tetrimino tetrimino, Position CentralPos){

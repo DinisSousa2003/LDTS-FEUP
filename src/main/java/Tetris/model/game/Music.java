@@ -1,18 +1,13 @@
 package Tetris.model.game;
 
-import Tetris.Main;
-
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.FloatControl;
-import java.awt.*;
 import java.io.File;
-import java.io.IOException;
-import java.net.URISyntaxException;
 
 public class Music {
-    private Clip music;
+    private final Clip music;
     private static Music instance;
 
     private Music() {
@@ -34,7 +29,6 @@ public class Music {
             musicClip.open(audioInput);
             FloatControl gainControl = (FloatControl) musicClip.getControl(FloatControl.Type.MASTER_GAIN);
             gainControl.setValue(-25.0f);
-            System.out.println(musicClip);
             return musicClip;
         } catch (Exception e) {
             e.printStackTrace();

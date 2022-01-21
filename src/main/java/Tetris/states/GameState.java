@@ -1,7 +1,6 @@
 package Tetris.states;
 
 import Tetris.controller.Controller;
-import Tetris.controller.game.GameController;
 import Tetris.controller.game.ScreenController;
 import Tetris.model.game.Screen;
 import Tetris.viewer.GameViewer;
