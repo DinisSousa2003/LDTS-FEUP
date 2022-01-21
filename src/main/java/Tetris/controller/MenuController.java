@@ -16,19 +16,14 @@ public class MenuController extends Controller<Menu> {
     @Override
     public void step(Main main, GUI.ACTION action, long time) {
         switch (action) {
-            case UP:
-                getModel().previousEntry();
-                break;
-            case DOWN:
-                getModel().nextEntry();
-                break;
-            case SELECT:
+            case UP -> getModel().previousEntry();
+            case DOWN -> getModel().nextEntry();
+            case SELECT -> {
                 if (getModel().isSelectedExit()) main.setState(null);
-                if (getModel().isSelectedPlay()) main.setState(new GameState(new Screen(10,20)));
+                if (getModel().isSelectedPlay()) main.setState(new GameState(new Screen(10, 20)));
                 if (getModel().isSelectedRules()) main.setState(new RulesState(new Rules()));
-                break;
-            case QUIT:
-                main.setState(null);
+            }
+            case QUIT -> main.setState(null);
         }
     }
 }

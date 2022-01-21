@@ -4,9 +4,7 @@ import Tetris.Main;
 import Tetris.controller.game.ScreenController;
 import Tetris.gui.GUI;
 import Tetris.model.Position;
-import Tetris.model.game.Board;
 import Tetris.model.game.Screen;
-import Tetris.model.game.Tetrimino;
 import Tetris.model.game.TetriminoDirection;
 import Tetris.model.game.Tetriminos.I;
 import Tetris.model.game.Tetriminos.O;
@@ -22,8 +20,6 @@ import java.net.URISyntaxException;
 
 public class ScreenControllerTest {
     private ScreenController controller;
-    private Board board;
-    private Tetrimino tetrimino;
     private Main main;
 
     @BeforeEach
@@ -96,6 +92,7 @@ public class ScreenControllerTest {
 
     }
 
+    @Test
     void moveTetriminoDown(){
 
     }

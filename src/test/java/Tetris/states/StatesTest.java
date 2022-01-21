@@ -1,10 +1,12 @@
 package Tetris.states;
 
 import Tetris.Main;
+import Tetris.controller.EndGameController;
 import Tetris.controller.MenuController;
 import Tetris.controller.game.GameController;
 import Tetris.controller.game.ScreenController;
 import Tetris.gui.GUI;
+import Tetris.model.EndGame;
 import Tetris.model.game.Screen;
 import Tetris.model.menu.Menu;
 import org.junit.jupiter.api.AfterEach;
@@ -21,6 +23,7 @@ public class StatesTest {
 
     GameController gameController;
     MenuController menuController;
+    EndGameController endGameController;
     Menu menu;
     Main main;
 
@@ -30,6 +33,7 @@ public class StatesTest {
         menu = new Menu();
         menuController = new MenuController(menu);
         gameController = new ScreenController(new Screen(22, 22));
+        endGameController = new EndGameController(new EndGame());
     }
 
     @AfterEach
@@ -69,6 +73,13 @@ public class StatesTest {
         menuController.step(main, GUI.ACTION.SELECT, 0);
         Assertions.assertEquals(Tetris.states.GameState.class, main.getState().getClass());
         gameController.step(main, GUI.ACTION.QUIT, 0);
+        Assertions.assertEquals(Tetris.states.MenuState.class, main.getState().getClass());
+    }
+
+    @Test
+    void endGameToMenu(){
+        main.setState(new EndGameState(new EndGame()));
+        endGameController.step(main, GUI.ACTION.SELECT, 0);
         Assertions.assertEquals(Tetris.states.MenuState.class, main.getState().getClass());
     }
 }

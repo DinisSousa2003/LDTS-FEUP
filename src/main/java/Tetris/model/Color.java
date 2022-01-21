@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 public class Color{
-    private final Map<String, String> COLORS = new HashMap<String, String>();
-    private final Map<String, String> SHADOW_COLORS = new HashMap<String, String>();
+    private final Map<String, String> COLORS = new HashMap<>();
+    private final Map<String, String> SHADOW_COLORS = new HashMap<>();
     private final List<String> RAINBOW = new ArrayList<>();
 
     public Color(){

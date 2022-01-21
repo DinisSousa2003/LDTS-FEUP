@@ -52,9 +52,7 @@ public class Board {
 
     public void removeLine(int line){
         for (int j = line; j > 0;j--){
-            for (int i = 0; i < board[0].length; i++) {
-                board[j][i] = board[j-1][i];
-            }
+            System.arraycopy(board[j - 1], 0, board[j], 0, board[0].length);
         }
         Arrays.fill(board[0], null);
 

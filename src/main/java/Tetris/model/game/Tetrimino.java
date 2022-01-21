@@ -49,75 +49,41 @@ public abstract class Tetrimino {
     public TetriminoDirection getDirection(){return this.direction;}
 
     public Position[]  rotateRightPositions(){
-        TetriminoDirection tempdirection = TetriminoDirection.UP;
-        switch(this.direction){
-            case UP:
-                tempdirection = TetriminoDirection.RIGHT;
-                break;
-            case RIGHT:
-                tempdirection = TetriminoDirection.DOWN;
-                break;
-            case DOWN:
-                tempdirection = TetriminoDirection.LEFT;
-                break;
-            case LEFT:
-                tempdirection = TetriminoDirection.UP;
-                break;
-        }
+        TetriminoDirection tempdirection = switch (this.direction) {
+            case UP -> TetriminoDirection.RIGHT;
+            case RIGHT -> TetriminoDirection.DOWN;
+            case DOWN -> TetriminoDirection.LEFT;
+            case LEFT -> TetriminoDirection.UP;
+        };
         return getActualPositions(this.centralPosition,tempdirection);
     }
 
     public void  rotateRight(){
-        switch(this.direction){
-            case UP:
-                this.direction = TetriminoDirection.RIGHT;
-                break;
-            case RIGHT:
-                this.direction = TetriminoDirection.DOWN;
-                break;
-            case DOWN:
-                this.direction = TetriminoDirection.LEFT;
-                break;
-            case LEFT:
-                this.direction = TetriminoDirection.UP;
-                break;
+        switch (this.direction) {
+            case UP -> this.direction = TetriminoDirection.RIGHT;
+            case RIGHT -> this.direction = TetriminoDirection.DOWN;
+            case DOWN -> this.direction = TetriminoDirection.LEFT;
+            case LEFT -> this.direction = TetriminoDirection.UP;
         }
     }
 
 
     public Position[] rotateLeftPositions(){
-        TetriminoDirection tempdirection = TetriminoDirection.UP;
-        switch(this.direction) {
-            case UP:
-                tempdirection = TetriminoDirection.LEFT;
-                break;
-            case LEFT:
-                tempdirection = TetriminoDirection.DOWN;
-                break;
-            case DOWN:
-                tempdirection = TetriminoDirection.RIGHT;
-                break;
-            case RIGHT:
-                tempdirection = TetriminoDirection.UP;
-                break;
-        }
+        TetriminoDirection tempdirection = switch (this.direction) {
+            case UP -> TetriminoDirection.LEFT;
+            case LEFT -> TetriminoDirection.DOWN;
+            case DOWN -> TetriminoDirection.RIGHT;
+            case RIGHT -> TetriminoDirection.UP;
+        };
         return getActualPositions(this.centralPosition,tempdirection);
     }
 
     public void rotateLeft(){
-        switch(this.direction) {
-            case UP:
-                this.direction = TetriminoDirection.LEFT;
-                break;
-            case LEFT:
-                this.direction = TetriminoDirection.DOWN;
-                break;
-            case DOWN:
-                this.direction = TetriminoDirection.RIGHT;
-                break;
-            case RIGHT:
-                this.direction = TetriminoDirection.UP;
-                break;
+        switch (this.direction) {
+            case UP -> this.direction = TetriminoDirection.LEFT;
+            case LEFT -> this.direction = TetriminoDirection.DOWN;
+            case DOWN -> this.direction = TetriminoDirection.RIGHT;
+            case RIGHT -> this.direction = TetriminoDirection.UP;
         }
     }
 
