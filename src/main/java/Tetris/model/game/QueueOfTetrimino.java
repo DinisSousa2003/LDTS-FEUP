@@ -29,7 +29,7 @@ public class QueueOfTetrimino {
     private Tetrimino generateLast() {
         Random random = new Random();
         int num = random.nextInt(7);
-        Tetrimino next = new Z(new Position(5,1));;
+        Tetrimino next = new Z(new Position(5,1));
 
         switch (num){
             case 0:

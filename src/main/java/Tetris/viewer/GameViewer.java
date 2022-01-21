@@ -12,7 +12,6 @@ public class GameViewer extends Viewer<Screen> {
     }
 
     @Override
-    //TODO: DRAW THE MODEL OBJECTS ON THE INTERFACE
     protected void drawElements(GUI gui) throws IOException {
         //CONTOUR FOR GAME
         for(int i = 0; i < 12; i++) {
@@ -47,7 +46,7 @@ public class GameViewer extends Viewer<Screen> {
         gui.drawText(new Position(13, 7), "LINES", color.getColor("YELLOW"));
         gui.drawText(new Position(19, 7), "00", color.getColor("WHITE"));
 
-
+        //DRAW QUEUE, BOARD AND TETRIMINO
         gui.drawQueue(super.getModel().getQueueOfTetrimino());
         gui.drawBoard(super.getModel().getBoard());
         gui.drawShadowTetrimino(super.getModel().getShadowTetrimino());
