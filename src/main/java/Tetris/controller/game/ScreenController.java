@@ -21,7 +21,7 @@ public class ScreenController extends GameController{
     @Override
     public void step(Main main, GUI.ACTION action, long time) {
         int endOfGame = 1;
-        if(time - lastMovement > 1000) {
+        if(time - lastMovement > (1000/getModel().getStats().getLevel())) {
             endOfGame = moveDown();
             if (endOfGame == -1) {
                 this.getModel().stopMusic();
@@ -75,12 +75,22 @@ public class ScreenController extends GameController{
                 getModel().getBoard().addBlock(position,new Block(getModel().getTetrimino().getColor()));
             }
 
+            int lines = 0;
+
             for (int i = getModel().getHeight() -1 ;i >= 0;i--) {
                 if(getModel().getBoard().isLineFull(i)) {
                     getModel().getBoard().removeLine(i);
                     i++;
+                    lines++;
                 }
             }
+
+            getModel().getStats().removedLines(lines);
+            System.out.print(getModel().getStats().getLines());
+            System.out.print("   ");
+            System.out.print(getModel().getStats().getPoints());
+            System.out.print("   ");
+            System.out.println(getModel().getStats().getLevel());
 
             getModel().setTetrimino(getModel().getQueueOfTetrimino().popNext());
 
