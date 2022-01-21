@@ -54,10 +54,13 @@ public class Board {
     }
 
     public void removeLine(int line){
-        for (int i = line; i > 0;i--){
-            board[i] = board[i-1];
+        for (int j = line; j > 0;j--){
+            for (int i = 0; i < board[0].length; i++) {
+                board[j][i] = board[j-1][i];
+                System.out.println(board[j][i] + " , " + board[j-1][i]);
+            }
         }
-        for (Block block:board[0]) block = null;
+        for (int i = 0; i < board[0].length; i++) board[0][i] = null;
 
     }
 

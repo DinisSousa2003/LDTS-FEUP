@@ -67,6 +67,7 @@ public class ScreenController extends GameController{
         else {
             positions = getModel().getTetrimino().getActualPositions(getModel().getTetrimino().getCentralPosition(),getModel().getTetrimino().getDirection());
             for(Position position : positions) {
+                //System.out.println(getModel().getTetrimino().getColor() + " : " + position.getX() + " , " + position.getY());
                 getModel().getBoard().addBlock(position,new Block(getModel().getTetrimino().getColor()));
             }
 

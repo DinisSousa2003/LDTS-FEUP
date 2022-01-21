@@ -33,13 +33,13 @@ public class Color{
     }
 
     private void loadShadowColors() {   //mudar as cores
-        SHADOW_COLORS.put("CYAN", "#007777");
-        SHADOW_COLORS.put("YELLOW", "#777700");
-        SHADOW_COLORS.put("PURPLE", "#440044");
-        SHADOW_COLORS.put("GREEN", "#007700");
-        SHADOW_COLORS.put("RED", "#770000");
-        SHADOW_COLORS.put("BLUE", "#000077");
-        SHADOW_COLORS.put("ORANGE", "#663300");
+        SHADOW_COLORS.put("CYAN", "#005555");
+        SHADOW_COLORS.put("YELLOW", "#555500");
+        SHADOW_COLORS.put("PURPLE", "#220022");
+        SHADOW_COLORS.put("GREEN", "#005500");
+        SHADOW_COLORS.put("RED", "#550000");
+        SHADOW_COLORS.put("BLUE", "#000055");
+        SHADOW_COLORS.put("ORANGE", "#552200");
     }
 
     private void loadRAINBOW(){
