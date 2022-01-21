@@ -34,7 +34,6 @@ public class Music {
             musicClip.open(audioInput);
             FloatControl gainControl = (FloatControl) musicClip.getControl(FloatControl.Type.MASTER_GAIN);
             gainControl.setValue(-25.0f);
-            System.out.println(musicClip);
             return musicClip;
         } catch (Exception e) {
             e.printStackTrace();
