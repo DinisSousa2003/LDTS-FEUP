@@ -54,7 +54,7 @@ public class StatesTest {
     @Test
     void actionQuit(){
         menuController.step(main, GUI.ACTION.QUIT, 0);
-        Assertions.assertEquals(null, main.getState());
+        Assertions.assertNull(main.getState());
     }
 
     @Test

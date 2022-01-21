@@ -4,15 +4,13 @@ import Tetris.gui.GUI;
 import Tetris.model.Position;
 import Tetris.model.game.Screen;
 
-import java.io.IOException;
-
 public class GameViewer extends Viewer<Screen> {
     public GameViewer(Screen screen){
         super(screen);
     }
 
     @Override
-    protected void drawElements(GUI gui) throws IOException {
+    protected void drawElements(GUI gui) {
         //CONTOUR FOR GAME
         for(int i = 0; i < 12; i++) {
             gui.drawSquare(new Position(i, 0), color.getColor("LIGHT_GRAY"));

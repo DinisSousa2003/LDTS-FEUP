@@ -4,15 +4,13 @@ import Tetris.gui.GUI;
 import Tetris.model.Position;
 import Tetris.model.menu.Menu;
 
-import java.io.IOException;
-
 public class MenuViewer extends Viewer<Menu>{
     public MenuViewer(Menu menu) {
         super(menu);
     }
 
     @Override
-    protected void drawElements(GUI gui) throws IOException {
+    protected void drawElements(GUI gui) {
 
         for(int i = 0; i < 22; i++) {
             gui.drawSquare(new Position(i, 0), color.getRAINBOW().get(i % 7));

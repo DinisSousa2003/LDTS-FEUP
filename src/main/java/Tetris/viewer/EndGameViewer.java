@@ -3,7 +3,6 @@ package Tetris.viewer;
 import Tetris.gui.GUI;
 import Tetris.model.EndGame;
 import Tetris.model.Position;
-import Tetris.model.game.Screen;
 
 import java.io.IOException;
 
@@ -20,7 +19,7 @@ public class EndGameViewer extends Viewer<EndGame> {
     }
 
     @Override
-    protected void drawElements(GUI gui) throws IOException {
+    protected void drawElements(GUI gui) {
         for(int i = 5;i < 17;i++) {
             for(int j = 8;j <13;j++ ) {
                 gui.drawSquare(new Position(i, j), color.getColor("BLACK"));

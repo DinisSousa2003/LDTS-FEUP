@@ -19,7 +19,6 @@ import org.junit.jupiter.api.Test;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.sql.Time;
 
 public class ScreenControllerTest {
     private ScreenController controller;

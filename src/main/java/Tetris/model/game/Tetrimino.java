@@ -1,10 +1,7 @@
 package Tetris.model.game;
 
-import Tetris.model.Color;
 import Tetris.model.Position;
 import Tetris.model.game.Tetriminos.*;
-import com.googlecode.lanterna.TextColor;
-import com.sun.jdi.ClassType;
 
 public abstract class Tetrimino {
 

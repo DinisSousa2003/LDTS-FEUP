@@ -22,9 +22,6 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-import static java.awt.Font.MONOSPACED;
-import static java.awt.Font.PLAIN;
-
 public class LanternaGUI implements GUI{
     private final Screen screen;
     private final Tetris.model.Color colors = new Color();
@@ -69,8 +66,7 @@ public class LanternaGUI implements GUI{
         ge.registerFont(font);
 
         Font loadedFont = font.deriveFont(Font.PLAIN, 30);
-        AWTTerminalFontConfiguration fontConfig = AWTTerminalFontConfiguration.newInstance(loadedFont);
-        return fontConfig;
+        return AWTTerminalFontConfiguration.newInstance(loadedFont);
     }
 
     @Override
@@ -173,7 +169,6 @@ public class LanternaGUI implements GUI{
 
     @Override
     public void drawStats(Stats stats) {
-        //STATS
         drawText(new Position(14, 1), "P", colors.getColor("RED"));
         drawText(new Position(15, 1), "O", colors.getColor("ORANGE"));
         drawText(new Position(16, 1), "I", colors.getColor("YELLOW"));

@@ -24,7 +24,7 @@ public class StatsTest {
     void testStats(){
         Assertions.assertEquals(1, stats.getLevel());
         stats.removedLines(4);
-        Assertions.assertEquals(80*1, stats.getPoints());
+        Assertions.assertEquals(80, stats.getPoints());
         stats.removedLines(1);
         stats.removedLines(3);
         stats.removedLines(1);

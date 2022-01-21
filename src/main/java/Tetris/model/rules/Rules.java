@@ -1,8 +1,5 @@
 package Tetris.model.rules;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class Rules {
 
     private final String entry;

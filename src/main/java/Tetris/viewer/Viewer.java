@@ -4,7 +4,6 @@ import Tetris.gui.GUI;
 import Tetris.model.Color;
 
 import java.io.IOException;
-import java.util.Map;
 
 public abstract class Viewer <T>{
     private final T model;
@@ -24,5 +23,5 @@ public abstract class Viewer <T>{
         gui.refresh();
     }
 
-    protected abstract void drawElements(GUI gui) throws IOException;
+    protected abstract void drawElements(GUI gui);
 }

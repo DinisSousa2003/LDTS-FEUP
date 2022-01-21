@@ -1,7 +1,5 @@
 package Tetris.model.game;
 
-import Tetris.model.Color;
-
 public class Block {
 
     private final String color;
