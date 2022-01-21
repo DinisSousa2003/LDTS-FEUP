@@ -83,7 +83,6 @@ public class LanternaGUI implements GUI{
         tg.putString(position.getX(), position.getY(), " ");
     }
 
-    //TODO: ADD ACTIONS THAT WILL BE USED DURING GAMEPLAY (IF NEEDED)
     @Override
     public ACTION getNextAction() throws IOException {
         KeyStroke keyStroke = screen.pollInput();

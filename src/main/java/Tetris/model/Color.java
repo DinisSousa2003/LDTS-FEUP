@@ -32,7 +32,7 @@ public class Color{
 
     }
 
-    private void loadShadowColors() {   //mudar as cores
+    private void loadShadowColors() {
         SHADOW_COLORS.put("CYAN", "#004444");
         SHADOW_COLORS.put("YELLOW", "#444400");
         SHADOW_COLORS.put("PURPLE", "#330033");
