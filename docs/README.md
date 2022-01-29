@@ -19,25 +19,25 @@
         2. [Solution](#solution)
         3. [Implementation](#implementation)
     2. [Singleton](#singleton)
-        1. [Problem](#problem)
-        2. [Solution](#solution)
-        3. [Implementation](#implementation)
+        1. [Problem](#problem-1)
+        2. [Solution](#solution-1)
+        3. [Implementation](#implementation-1)
     3. [State Pattern](#state-pattern)
-        1. [Problem](#problem)
-        2. [Solution](#solution)
-        3. [Implementation](#implementation)
+        1. [Problem](#problem-2)
+        2. [Solution](#solution-2)
+        3. [Implementation](#implementation-2)
     4. [Factory Method Pattern](#factory-method-pattern)
-        1. [Problem](#problem)
-        2. [Solution](#solution)
-        3. [Implementation](#implementation)
+        1. [Problem](#problem-3)
+        2. [Solution](#solution-3)
+        3. [Implementation](#implementation-3)
     5. [Game Loop Pattern](#game-loop-pattern)
-        1. [Problem](#problem)
-        2. [Solution](#solution)
-        3. [Implementation](#implementation)
+        1. [Problem](#problem-4)
+        2. [Solution](#solution-4)
+        3. [Implementation](#implementation-4)
     6. [MVC Architecture](#mvc-architecture)
-        1. [Problem](#problem)
-        2. [Solution](#solution)
-        3. [Implementation](#implementation)
+        1. [Problem](#problem-5)
+        2. [Solution](#solution-5)
+        3. [Implementation](#implementation-5)
 5. [Code Smells and Possible Refactoring](#code-smells-and-possible-refactorings)
    1. [Composing Methods](#composing-methods)
        2. [Extracting Method](#extracting-method)
@@ -103,7 +103,7 @@ Currently when you run Tetris, you'll see the Starting Menu
 
 ![Game Play](gameshots/GamePlay.png)
 
-![Game Over](gameshots/GameOver.png)
+![Game Over](gameshots/GameOverHigherScore.png)
 
 
 
@@ -233,7 +233,7 @@ A common solution to this is the use of the MVC Architecture (also known as Mode
 > >
 > >[Music](../src/main/java/Tetris/model/game/Music.java)
 > >
-> >[QueueOfTetriminos](../src/main/java/Tetris/model/game/QueueOfTetriminos.java)
+> >[QueueOfTetriminos](../src/main/java/Tetris/model/game/QueueOfTetrimino.java)
 > >
 > >[Screen](../src/main/java/Tetris/model/game/Screen.java)
 > >
@@ -243,7 +243,7 @@ A common solution to this is the use of the MVC Architecture (also known as Mode
 > >
 > >[TetriminoDirection](../src/main/java/Tetris/model/game/TetriminoDirection.java)
 > >
-> >[Tetriminos](../src/main/java/Tetris/model/game/Tetriminos/)
+> >[Tetriminos](../src/main/java/Tetris/model/game/Tetriminos)
 > 
 > >**Rules Model**
 > >
