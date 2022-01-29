@@ -2,7 +2,7 @@ package Tetris.controller;
 
 import Tetris.Main;
 import Tetris.gui.GUI;
-import Tetris.model.EndGame;
+import Tetris.model.endGame.EndGame;
 import Tetris.model.menu.Menu;
 import Tetris.states.MenuState;
 

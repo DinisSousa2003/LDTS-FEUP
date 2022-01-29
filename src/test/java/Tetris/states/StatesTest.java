@@ -7,7 +7,7 @@ import Tetris.controller.RulesController;
 import Tetris.controller.game.GameController;
 import Tetris.controller.game.ScreenController;
 import Tetris.gui.GUI;
-import Tetris.model.EndGame;
+import Tetris.model.endGame.EndGame;
 import Tetris.model.game.Screen;
 import Tetris.model.menu.Menu;
 import Tetris.model.rules.Rules;

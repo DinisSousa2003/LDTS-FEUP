@@ -1,4 +1,4 @@
-package Tetris.model;
+package Tetris.model.endGame;
 
 public class EndGame {
 

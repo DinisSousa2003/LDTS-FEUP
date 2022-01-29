@@ -2,7 +2,7 @@ package Tetris.controller.game;
 
 import Tetris.Main;
 import Tetris.gui.GUI;
-import Tetris.model.EndGame;
+import Tetris.model.endGame.EndGame;
 import Tetris.model.Position;
 import Tetris.model.game.Block;
 import Tetris.model.game.Screen;
