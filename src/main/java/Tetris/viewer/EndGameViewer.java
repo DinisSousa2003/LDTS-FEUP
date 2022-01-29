@@ -1,7 +1,7 @@
 package Tetris.viewer;
 
 import Tetris.gui.GUI;
-import Tetris.model.EndGame;
+import Tetris.model.endGame.EndGame;
 import Tetris.model.Position;
 
 import java.io.IOException;

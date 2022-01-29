@@ -147,7 +147,7 @@ In our project, there classes of which it is not supposed to exist more than one
 A game works like a finite-state machine. At any given time, a game can only be in some given state. On the case of Tetris, you can be either in the Menu, seeing the Rules, playing the actual Game or sad because you are on the GameEnd. One could use conditional logic to change between the states. However, not only that would be harder to read and maintain, but it would also be violation of the Single Responsibility Principle and the Open Closed Principle.
 
 ### Solution
-Create a classes for all the different states. All the different states implement the same State interface. This allows the Main to render different Views and have the user work on different Controllers by only knowing in which state it is.
+>Create a classes for all the different states. All the different states implement the same State interface. This allows the Main to render different Views and have the user work on different Controllers by only knowing in which state it is.
 
 ### Implementation
 ![State Pattern](uml/State_Factory.drawio.png)
@@ -172,7 +172,7 @@ Create a classes for all the different states. All the different states implemen
 Imagine that you have a method that needs to return objects of different classes each time it is called. When applying the State Pattern we ran into that problem. For each different state, we needed the methods getController() and getViewer() to return objects of different classes. But how can we do this?
 
 #### Solution
-Factory Method is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created. That way, the same State interface can return different Controllers and Viewers and needed.
+>Factory Method is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created. That way, the same State interface can return different Controllers and Viewers and needed.
 
 #### Implementation
 ![Factory Pattern](uml/State_Factory.drawio.png)
@@ -194,7 +194,7 @@ Factory Method is a creational design pattern that provides an interface for cre
 In a game like Tetris, the game should loop continuously during gameplay.
 
 #### Solution
-For each turn of the loop, it processes user input without blocking, updates the game state, and renders the game. It tracks the passage of time to control the rate of gameplay. The game loop makes it possible for the game to run smoothly regardless of a user's input, or lack thereof. It also allows an easier frame rate management. 
+>For each turn of the loop, it processes user input without blocking, updates the game state, and renders the game. It tracks the passage of time to control the rate of gameplay. The game loop makes it possible for the game to run smoothly regardless of a user's input, or lack thereof. It also allows an easier frame rate management. 
 
 #### Implementation
 ![Game Loop](uml/GameLoop.png)
@@ -223,7 +223,7 @@ A common solution to this is the use of the MVC Architecture (also known as Mode
 >
 > >**Menu Model**
 > >
-> >[Menu](../src/main/java/Tetris/model/Menu.java)
+> >[Menu](../src/main/java/Tetris/model/menu/Menu.java)
 > 
 > >**Game Model**
 > >
@@ -251,7 +251,7 @@ A common solution to this is the use of the MVC Architecture (also known as Mode
 > 
 > >**End Game Model**
 > >
-> >[EndGame](../src/main/java/Tetris/model/EndGame.java)
+> >[EndGame](../src/main/java/Tetris/model/endGame/EndGame.java)
  
  **The Controller Classes can be found in the following files:**
  > [Controller](../src/main/java/Tetris/controller/Controller.java)
@@ -369,6 +369,8 @@ Another example is when drawing the shadow we call its draw function, just like 
 
 ![TEST4](testshots/testshot4.png)
 
+![TEST5](testshots/testshot5.png)
+
 
 ## Self-Evaluation
 
@@ -377,4 +379,4 @@ Another example is when drawing the shadow we call its draw function, just like 
 | Dinis Sousa          |         1/3          |
 | Francisca Silva      |         1/3          |
 | Miguel Teixeira      |         1/3          |
->>>>>>> develop
+

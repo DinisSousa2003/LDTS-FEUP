@@ -2,7 +2,7 @@ package Tetris.states;
 
 import Tetris.controller.Controller;
 import Tetris.controller.EndGameController;
-import Tetris.model.EndGame;
+import Tetris.model.endGame.EndGame;
 import Tetris.viewer.EndGameViewer;
 import Tetris.viewer.Viewer;
 
