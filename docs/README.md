@@ -358,9 +358,13 @@ Another example is when drawing the shadow we call its draw function, just like 
 ## Tests
 
 ### PIT TEST
+The pitest is working and generating a report on the test's strenght and coverage. However, PIT seems not to work when testing terminal functions, which are functions that need an instance of main to work. Unfortunately 16/29 of our tests worked in that manner, and so the PIT report has only 13 tests in it. Nevertheless, here is it:
+
 ![PIT 1](testshots/testshot.png)
 
 ### TEST
+The tests were all made before to the code (following a TDD), except for the viewer tests, which we found difficult to create test prior to the implementation of the code itself.
+
 ![TEST1](testshots/testshot1.png)
 
 ![TEST2](testshots/testshot2.png)
