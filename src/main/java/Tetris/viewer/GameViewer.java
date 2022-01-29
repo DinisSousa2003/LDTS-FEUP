@@ -14,17 +14,11 @@ public class GameViewer extends Viewer<Screen> {
         //CONTOUR FOR GAME
         for(int i = 0; i < 12; i++) {
             gui.drawSquare(new Position(i, 0), color.getColor("LIGHT_GRAY"));
-        }
-
-        for(int i = 0; i < 12; i++) {
             gui.drawSquare(new Position(i, 21), color.getColor("LIGHT_GRAY"));
         }
 
         for(int i = 1; i < 21; i++) {
             gui.drawSquare(new Position(0, i), color.getColor("LIGHT_GRAY"));
-        }
-
-        for(int i = 1; i < 21; i++) {
             gui.drawSquare(new Position(11, i), color.getColor("LIGHT_GRAY"));
         }
 

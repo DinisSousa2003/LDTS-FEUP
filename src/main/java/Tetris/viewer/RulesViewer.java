@@ -12,23 +12,7 @@ public class RulesViewer extends Viewer<Rules>{
     @Override
     protected void drawElements(GUI gui) {
 
-        for(int i = 0; i < 22; i++) {
-            gui.drawSquare(new Position(i, 0), color.getRAINBOW().get(i % 7));
-        }
-
-        for(int i = 0; i < 22; i++) {
-            gui.drawSquare(new Position(i, 21), color.getRAINBOW().get(i % 7));
-
-        }
-
-        for(int i = 1; i < 21; i++) {
-            gui.drawSquare(new Position(0, i), color.getRAINBOW().get(i % 7));
-        }
-
-        for(int i = 1; i < 21; i++) {
-            gui.drawSquare(new Position(21, i), color.getRAINBOW().get(i % 7));
-        }
-
+        gui.drawOutLine();
 
         gui.drawText(new Position(7, 2), "C", color.getColor("RED"));
         gui.drawText(new Position(8, 2), "O", color.getColor("ORANGE"));

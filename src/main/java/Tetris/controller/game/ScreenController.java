@@ -72,35 +72,43 @@ public class ScreenController extends GameController{
             return 1;
         }
         else {
-            positions = getModel().getTetrimino().getActualPositions(getModel().getTetrimino().getCentralPosition(),getModel().getTetrimino().getDirection());
-            for(Position position : positions) {
-                getModel().getBoard().addBlock(position,new Block(getModel().getTetrimino().getColor()));
-            }
-
-            int lines = 0;
-
-            for (int i = getModel().getHeight() -1 ;i >= 0;i--) {
-                if(getModel().getBoard().isLineFull(i)) {
-                    getModel().getBoard().removeLine(i);
-                    i++;
-                    lines++;
-                }
-            }
-
-            getModel().getStats().removedLines(lines);
-
-            getModel().setTetrimino(getModel().getQueueOfTetrimino().popNext());
-            getModel().setShadowTetrimino(getModel().getTetrimino().copy());
-
-            positions = getModel().getTetrimino().getActualPositions(getModel().getTetrimino().getCentralPosition(),getModel().getTetrimino().getDirection());
-            canMove = getModel().getBoard().canMove(positions);
-            if(!canMove){
-                getModel().setTetrimino(null);
-                return -1;
-            }
-
-            return 0;
+            dropBlocks();
+            removeAllFullLines();
+            changeTetrimino();
+            return checkForGameOver();
         }
+    }
+
+    private void dropBlocks() {
+        Position[] positions = getModel().getTetrimino().getActualPositions(getModel().getTetrimino().getCentralPosition(),getModel().getTetrimino().getDirection());
+        for(Position position : positions)
+            getModel().getBoard().addBlock(position,new Block(getModel().getTetrimino().getColor()));
+    }
+
+    private void removeAllFullLines() {
+        int lines = 0;
+        for (int i = getModel().getHeight() -1 ;i >= 0;i--)
+            if(getModel().getBoard().isLineFull(i)) {
+                getModel().getBoard().removeLine(i);
+                i++;
+                lines++;
+            }
+        getModel().getStats().removedLines(lines);
+    }
+
+    private void changeTetrimino(){
+        getModel().setTetrimino(getModel().getQueueOfTetrimino().popNext());
+        getModel().setShadowTetrimino(getModel().getTetrimino().copy());
+    }
+
+    private int checkForGameOver() {
+        Position[] positions = getModel().getTetrimino().getActualPositions(getModel().getTetrimino().getCentralPosition(),getModel().getTetrimino().getDirection());
+        boolean canMove = getModel().getBoard().canMove(positions);
+        if(!canMove){
+            getModel().setTetrimino(null);
+            return -1;
+        }
+        return 0;
     }
 
     private int dropDown() {

@@ -23,22 +23,20 @@ public class QueueTest {
 
     @Test
     public void popNext_generator(){
-        Assertions.assertEquals(3,3);
+        Assertions.assertEquals(3,queue.getTetreminoQueue().size());
 
         Tetrimino t1 = queue.popNext();
-        Assertions.assertEquals(3,3);
+        Assertions.assertEquals(3,queue.getTetreminoQueue().size());
         Assertions.assertNotNull(t1);
         Tetrimino t2 = queue.popNext();
-        Assertions.assertEquals(3,3);
+        Assertions.assertEquals(3,queue.getTetreminoQueue().size());
         Assertions.assertNotNull(t2);
         Tetrimino t3 = queue.popNext();
-        Assertions.assertEquals(3,3);
+        Assertions.assertEquals(3,queue.getTetreminoQueue().size());
         Assertions.assertNotNull(t3);
         Tetrimino t4 = queue.popNext();
-        Assertions.assertEquals(3,3);
+        Assertions.assertEquals(3,queue.getTetreminoQueue().size());
         Assertions.assertNotNull(t4);
-
-        //falta verificar se o novo tn nao é apenas um tetrimino
     }
 
 }
