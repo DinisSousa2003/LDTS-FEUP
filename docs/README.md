@@ -121,35 +121,75 @@ A common solution to this is the use of the MVC Architecture (also known as Mode
 > [Color](../src/main/java/Tetris/model/Color.java)
 > 
 > [Position](../src/main/java/Tetris/model/Position.java)
+>
+> >**Menu Model**
+> >
+> >[Menu](../src/main/java/Tetris/model/Menu.java)
 > 
-> **End Game Model**
+> >**Game Model**
+> >
+> >[Block](../src/main/java/Tetris/model/game/Block.java)
+> >
+> >[Board](../src/main/java/Tetris/model/game/Board.java)
+> >
+> >[Music](../src/main/java/Tetris/model/game/Music.java)
+> >
+> >[QueueOfTetriminos](../src/main/java/Tetris/model/game/QueueOfTetriminos.java)
+> >
+> >[Screen](../src/main/java/Tetris/model/game/Screen.java)
+> >
+> >[Stats](../src/main/java/Tetris/model/game/Stats.java)
+> >
+> >[Tetrimino](../src/main/java/Tetris/model/game/Tetrimino.java)
+> >
+> >[TetriminoDirection](../src/main/java/Tetris/model/game/TetriminoDirection.java)
+> >
+> >[Tetriminos](../src/main/java/Tetris/model/game/Tetriminos/)
 > 
-> [EndGame](../src/main/java/Tetris/model/EndGame.java)
+> >**Rules Model**
+> >
+> >[Rules](../src/main/java/Tetris/model/rules/Rules.java)
 > 
-> **Menu Model**
-> 
-> [Menu](../src/main/java/Tetris/model/Menu.java)
-> 
-> **Game Model**
-> 
-> [Block](../src/main/java/Tetris/model/game/Block.java)
-> 
-> [Board](../src/main/java/Tetris/model/game/Board.java)
-> 
-> [Music](../src/main/java/Tetris/model/game/Music.java)
-> 
-> [QueueOfTetriminos](../src/main/java/Tetris/model/game/QueueOfTetriminos.java)
-> 
-> [Screen](../src/main/java/Tetris/model/game/Screen.java)
-> 
-> [Stats](../src/main/java/Tetris/model/game/Stats.java)
-> 
-> [Tetrimino](../src/main/java/Tetris/model/game/Tetrimino.java)
-> 
-> [TetriminoDirection](../src/main/java/Tetris/model/game/TetriminoDirection.java)
-> 
-> [Tetriminos](../src/main/java/Tetris/model/game/Tetriminos/)
-> 
-> **Rules Model**
-> 
-> [Rules](../src/main/java/Tetris/model/rules/Rules.java)
+> >**End Game Model**
+> >
+> >[EndGame](../src/main/java/Tetris/model/EndGame.java)
+ 
+ **The Controller Classes can be found in the following files:**
+ > [Controller](../src/main/java/Tetris/controller/Controller.java)
+ > 
+ > > **Menu Controller**
+ > >
+ > > [MenuController](../src/main/java/Tetris/controller/MenuController.java)
+ > 
+ > > **Game Controller**
+ > >
+> > [GameController](../src/main/java/Tetris/controller/game/GameController.java)
+ > >
+> >[ScreenController](../src/main/java/Tetris/controller/game/ScreenController.java)
+ > 
+> >  **Rules Controller**
+ > >
+ > > [RulesController](../src/main/java/Tetris/controller/RulesController.java)
+ > 
+> > **EndGame Controller**
+ > >
+ > > [EndGameController](../src/main/java/Tetris/controller/MenuController.java)
+
+**The Viewer Classes can be found in the following files:**
+> [Viewer](../src/main/java/Tetris/viewer/Viewer.java)
+>
+> > **Menu Viewer**
+> >
+> > [MenuViewer](../src/main/java/Tetris/viewer/MenuViewer.java)
+>
+> > **Game Viewer**
+> >
+> > [GameViewer](../src/main/java/Tetris/viewer/GameViewer.java)
+>
+> >  **Rules Viewer**
+> >
+> > [RulesViewer](../src/main/java/Tetris/viewer/RulesViewer.java)
+>
+> > **EndGame Viewer**
+> >
+> > [EndGameViewer](../src/main/java/Tetris/viewer/MenuViewer.java)
