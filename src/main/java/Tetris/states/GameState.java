@@ -1,23 +1,21 @@
 package Tetris.states;
 
 import Tetris.controller.Controller;
-import Tetris.controller.GameController;
-import Tetris.model.Game;
+import Tetris.controller.game.ScreenController;
+import Tetris.model.game.Screen;
 import Tetris.viewer.GameViewer;
 import Tetris.viewer.Viewer;
 
-public class GameState extends State<Game> {
-    public GameState(Game game) {
-        super(game);
-    }
+public class GameState extends State<Screen> {
+    public GameState(Screen screen) {super(screen);}
 
     @Override
-    protected Viewer<Game> getViewer() {
+    protected Viewer<Screen> getViewer() {
         return new GameViewer(getModel());
     }
 
     @Override
-    protected Controller<Game> getController() {
-        return new GameController(getModel());
+    protected Controller<Screen> getController() {
+        return new ScreenController(getModel());
     }
 }
