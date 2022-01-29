@@ -188,4 +188,3 @@ public class LanternaGUI implements GUI{
         }
     }
 }
-

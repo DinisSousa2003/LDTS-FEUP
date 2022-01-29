@@ -4,7 +4,7 @@ plugins {
     id 'info.solidsoft.pitest' version '1.6.0'
 }
 
-group 'g.1505'
+group 'Tetris'
 version '1.0-SNAPSHOT'
 
 repositories {

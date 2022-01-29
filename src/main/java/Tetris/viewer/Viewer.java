@@ -1,11 +1,13 @@
 package Tetris.viewer;
 
 import Tetris.gui.GUI;
+import Tetris.model.Color;
 
 import java.io.IOException;
 
 public abstract class Viewer <T>{
     private final T model;
+    protected final Color color = new Color();
 
     public Viewer(T model) {
         this.model = model;
@@ -16,6 +18,7 @@ public abstract class Viewer <T>{
     }
 
     public void draw(GUI gui) throws IOException {
+        gui.clear();
         drawElements(gui);
         gui.refresh();
     }

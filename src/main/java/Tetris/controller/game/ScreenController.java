@@ -141,14 +141,12 @@ public class ScreenController extends GameController{
         Position[] positions = getModel().getTetrimino().rotateRightPositions();
         boolean canMove = getModel().getBoard().canMove(positions);
         if (canMove) getModel().getTetrimino().rotateRight();
-        // ver se se pode mexer pros lados
     }
 
     private void rotateLeft() {
         Position[] positions = getModel().getTetrimino().rotateLeftPositions();
         boolean canMove = getModel().getBoard().canMove(positions);
         if (canMove) getModel().getTetrimino().rotateLeft();
-        // ver se se pode mexer pros lados
     }
 
 }
