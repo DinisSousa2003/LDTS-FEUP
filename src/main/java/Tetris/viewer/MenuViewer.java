@@ -12,21 +12,7 @@ public class MenuViewer extends Viewer<Menu>{
     @Override
     protected void drawElements(GUI gui) {
 
-        for(int i = 0; i < 22; i++) {
-            gui.drawSquare(new Position(i, 0), color.getRAINBOW().get(i % 7));
-        }
-
-        for(int i = 0; i < 22; i++) {
-            gui.drawSquare(new Position(i, 21), color.getRAINBOW().get(i % 7));
-        }
-
-        for(int i = 1; i < 21; i++) {
-            gui.drawSquare(new Position(0, i), color.getRAINBOW().get(i % 7));
-        }
-
-        for(int i = 1; i < 21; i++) {
-            gui.drawSquare(new Position(21, i), color.getRAINBOW().get(i % 7));
-        }
+        gui.drawOutLine();
 
         gui.drawText(new Position(8, 4), "T", color.getColor("RED"));
         gui.drawText(new Position(9, 4), "E", color.getColor("ORANGE"));

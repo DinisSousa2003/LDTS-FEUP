@@ -3,12 +3,14 @@ package Tetris.states;
 import Tetris.Main;
 import Tetris.controller.EndGameController;
 import Tetris.controller.MenuController;
+import Tetris.controller.RulesController;
 import Tetris.controller.game.GameController;
 import Tetris.controller.game.ScreenController;
 import Tetris.gui.GUI;
 import Tetris.model.EndGame;
 import Tetris.model.game.Screen;
 import Tetris.model.menu.Menu;
+import Tetris.model.rules.Rules;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -22,6 +24,7 @@ import java.net.URISyntaxException;
 public class StatesTest {
 
     GameController gameController;
+    RulesController rulesController;
     MenuController menuController;
     EndGameController endGameController;
     Menu menu;
@@ -33,6 +36,7 @@ public class StatesTest {
         menu = new Menu();
         menuController = new MenuController(menu);
         gameController = new ScreenController(new Screen(22, 22));
+        rulesController = new RulesController(new Rules());
         endGameController = new EndGameController(new EndGame());
     }
 
@@ -74,6 +78,15 @@ public class StatesTest {
         menuController.step(main, GUI.ACTION.SELECT, 0);
         Assertions.assertEquals(Tetris.states.GameState.class, main.getState().getClass());
         gameController.step(main, GUI.ACTION.QUIT, 0);
+        Assertions.assertEquals(Tetris.states.MenuState.class, main.getState().getClass());
+    }
+
+    @Test
+    void menuToRulesToMenu(){
+        menuController.step(main, GUI.ACTION.DOWN, 0);
+        menuController.step(main, GUI.ACTION.SELECT, 0);
+        Assertions.assertEquals(Tetris.states.RulesState.class, main.getState().getClass());
+        rulesController.step(main, GUI.ACTION.SELECT, 0);
         Assertions.assertEquals(Tetris.states.MenuState.class, main.getState().getClass());
     }
 
