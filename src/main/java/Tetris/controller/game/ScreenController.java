@@ -30,19 +30,31 @@ public class ScreenController extends GameController{
             this.lastMovement = time;
         }
 
-        switch (action) {
-            case QUIT -> {
+        switch (action){
+            case QUIT:
                 this.getModel().stopMusic();
                 main.setState(new MenuState(new Menu()));
-            }
-            case DOWN -> endOfGame = moveDown();
-            case RIGHT -> moveRight();
-            case LEFT -> moveLeft();
-            case UP -> rotateRight();
-            case Z -> rotateLeft();
-            case SPACE -> endOfGame = dropDown();
-            default -> {
-            }
+                break;
+            case DOWN:
+                endOfGame = moveDown();
+                break;
+            case RIGHT:
+                moveRight();
+                break;
+            case LEFT:
+                moveLeft();
+                break;
+            case UP:
+                rotateRight();
+                break;
+            case Z:
+                rotateLeft();
+                break;
+            case SPACE:
+                endOfGame = dropDown();
+                break;
+            default:
+                break;
         }
 
         dropShadow();

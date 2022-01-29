@@ -28,6 +28,8 @@ public class ScreenControllerTest {
         controller = new ScreenController(new Screen(10,20));
     }
 
+
+
     @Test
     void moveTetriminoRight(){
 
@@ -56,7 +58,7 @@ public class ScreenControllerTest {
 
         controller.getModel().getTetrimino().setCentralPosition(new Position(2, 15));
         controller.step(main, GUI.ACTION.LEFT,0);
-        Position p = controller.getModel().getTetrimino().getCentralPosition();
+        controller.getModel().getTetrimino().getCentralPosition();
         Assertions.assertEquals(new Position(2, 15), controller.getModel().getTetrimino().getCentralPosition());
         Assertions.assertEquals(TetriminoDirection.UP,controller.getModel().getTetrimino().getDirection());
     }
@@ -87,6 +89,9 @@ public class ScreenControllerTest {
         Assertions.assertEquals(new Position(5, 17),controller.getModel().getTetrimino().getCentralPosition());
     }
 
+
+
+    /*
     @Test
     void rotateTetriminoLeft(){
 
@@ -96,4 +101,5 @@ public class ScreenControllerTest {
     void moveTetriminoDown(){
 
     }
+     */
 }

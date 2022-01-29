@@ -43,6 +43,7 @@ public class StatesTest {
         menuController = null;
     }
 
+
     @Test
     void actionDown(){
         menuController.step(main, GUI.ACTION.DOWN, 0);
@@ -82,4 +83,7 @@ public class StatesTest {
         endGameController.step(main, GUI.ACTION.SELECT, 0);
         Assertions.assertEquals(Tetris.states.MenuState.class, main.getState().getClass());
     }
+
+
+
 }
