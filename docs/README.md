@@ -40,7 +40,7 @@
         3. [Implementation](#implementation)
 5. [Code Smells and Possible Refactoring](#code-smells-and-possible-refactorings)
    1. [Composing Methods](#composing-methods)
-       2. [Extracting Method](#extracting-method)
+       1. [Extracting Method](#extracting-method)
    2. [Removing Repeated Code](#removing-repeated-code)
        1. [Replace Using Extracting Method](#replace-using-extracting-method)
 6. [Additional Features](#additional-features)
