@@ -146,7 +146,7 @@ In our project, there classes of which it is not supposed to exist more than one
 #### Problem
 A game works like a finite-state machine. At any given time, a game can only be in some given state. On the case of Tetris, you can be either in the Menu, seeing the Rules, playing the actual Game or sad because you are on the GameEnd. One could use conditional logic to change between the states. However, not only that would be harder to read and maintain, but it would also be violation of the Single Responsibility Principle and the Open Closed Principle.
 
-### Solution
+#### Solution
 >Create a classes for all the different states. All the different states implement the same State interface. This allows the Main to render different Views and have the user work on different Controllers by only knowing in which state it is.
 
 ### Implementation
